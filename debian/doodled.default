@@ -1,0 +1,13 @@
+# Defaults for doodled
+# sourced by /etc/init.d/doodled
+
+# Directories which doodle is going to index
+DOODLE_PATH="/home"
+
+# Default location of the doodle database
+# Note: do not change - it is hardcoded into the binary
+DOODLE_DBPATH="/var/lib/doodle/doodle.db"
+
+# Additional options that are passed to doodled,
+# the doodle daemon (if installed).
+DAEMON_OPTS="-d ${DOODLE_DBPATH} -L /var/log/doodled.log ${DOODLE_PATH}"

@@ -1,0 +1,26 @@
+#!/bin/sh
+
+if [ -r /etc/default/doodle ]
+then
+	. /etc/default/doodle
+else
+        exit 0
+fi
+
+if [ -x /usr/bin/doodle ]
+then
+	DOODLE_PATH=$(
+		for DIRECTORY in ${DOODLE_PATH}
+		do
+			[ -d ${DIRECTORY} ] && echo ${DIRECTORY}
+		done
+	)
+
+	if [ -n "${DOODLE_PATH}" ]
+	then
+		/usr/bin/doodle ${DAEMON_OPTS} -b ${DOODLE_PATH}
+
+		chown root:doodle "$(dirname ${DOODLE_DBPATH})" -R
+		chmod 0660 "${DOODLE_DBPATH}"
+	fi
+fi

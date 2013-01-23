@@ -1,0 +1,13 @@
+Description: Fix hyphen used as minus sign.
+Author: Prach Pongpanich <prachpub@gmail.com>
+--- doodle-0.7.0.orig/doc/man/doodle.1
++++ doodle-0.7.0/doc/man/doodle.1
+@@ -23,7 +23,7 @@ $ doodle \-b /foo /bar  # or
+ $ doodle \-b /foo ; doodle \-b /bar
+ 
+ .TP
+-will result in the same database containing both the index for /foo and /bar.  Note that the only way to only un-index /foo at this point is to make /foo inaccessible (using for example chmod 000 /foo or even rm -rf /foo) and then run doodle \-b again.
++will result in the same database containing both the index for /foo and /bar.  Note that the only way to only un-index /foo at this point is to make /foo inaccessible (using for example chmod 000 /foo or even rm \-rf /foo) and then run doodle \-b again.
+ 
+ .TP
+ In networked environments, it often makes sense to build a database at the root of each file system, containing the entries for that  file system.  For this, doodle is run for each file system on the file server where that file system is on a local disk, to prevent thrashing the network.  Users can select which databases doodle searches. Databases cannot be concatenated together.

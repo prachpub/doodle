@@ -1,0 +1,52 @@
+#!/bin/sh
+
+CRON="/etc/cron.daily/doodle"
+
+set -e
+
+case "${1}" in
+	configure)
+		if ! getent group doodle > /dev/null 2>&1
+		then
+			addgroup --system doodle
+		fi
+
+		chown root:doodle /usr/bin/doodle
+		chmod g+s /usr/bin/doodle
+
+		if [ ! -d /var/lib/doodle ]
+		then
+			mkdir -p /var/lib/doodle
+		fi
+
+		chown root:doodle /var/lib/doodle -R
+
+		chmod 0750 /var/lib/doodle
+
+		if [ -e /var/lib/doodle/doodle.db ]
+		then
+			chmod 0660 /var/lib/doodle/doodle.db
+		else
+
+cat << EOF
+
+WARNING: You should run '${CRON}' as root. doodle will not work
+properly until you do or until it is run by cron (it is daily).
+EOF
+
+		fi
+		;;
+
+	abort-upgrade|abort-remove|abort-deconfigure)
+
+		;;
+
+	*)
+		echo "postinst called with unknown argument \`${1}'" >&2
+		exit 1
+		;;
+esac
+
+#DEBHELPER#
+
+exit 0

@@ -1,0 +1,81 @@
+Author: Daniel Baumann <daniel.baumann@progress-technologies.net>
+Description: Sets the doodle database name.
+
+diff -Naurp doodle.orig/doc/man/doodle.1 doodle/doc/man/doodle.1
+--- doodle.orig/doc/man/doodle.1	2011-09-09 19:18:29.978309912 +0200
++++ doodle/doc/man/doodle.1	2011-09-09 19:19:52.602719627 +0200
+@@ -36,9 +36,9 @@ $ doodle keyword
+ .TP
+ to search all of your files for keyword.  Note that only the meta-data extracted by libextractor is searched.  Thus if libextractor does not find any meta-data in the files, you may not get any results.  You can use the option \-l to specify non-standard libextractor plugins.  For example, doodle could be used to replace the locate tool from the GNU findutils like this:
+ 
+-$ alias updatedb="doodle \-bn \-d ~/.doodle\-locate\-db \-l libextractor_filename /"
++$ alias updatedb="doodle \-bn \-d /var/lib/doodle/doodle\-locate\-db \-l libextractor_filename /"
+ 
+-$ alias locate="doodle \-d ~/.doodle\-locate\-db"
++$ alias locate="doodle \-d /var/lib/doodle/doodle\-locate\-db"
+ 
+ 
+ .SH "OPTIONS"
+@@ -50,7 +50,7 @@ do approximate matching with mismatches
+ build the doodle database (passed arguments are directories and filenames that are to be indexed).  In comparison with GNU locate the doodle binary encapsulates both the locate and the updatedb tool.  Using the \fB\-b\fR option doodle builds or updates the database (equivalent to updatedb), without \fB\-b\fR it behaves similar to locate.
+ .TP 
+ \fB\-d \fIFILENAME\fR, \fB\-\-database=\fIFILENAME\fR
+-use FILENAME for the location of the database (use when building or searching).  This option is particularly useful when doodle is used to search different types of files (or is operated with different extractor options).  Using this option doodle can be used to build specialized indices (i.e. one per file system), which can in turn improve search performance.  When searching, you can pass a colon-separated list of database file names, in that case all databases are searched.  Note that the disk-space consumption of a single database is typically slightly smaller than if the database is split into multiple files.  Nevertheless, the space\-savings are likely to be small (a few percent).  You can also use  the environment variable DOODLE_PATH to set the list of database files to search.  The option overrides the environment variable if both are used.  If the option is not given and DOODLE_PATH is not set, "~/.doodle" is used.
++use FILENAME for the location of the database (use when building or searching).  This option is particularly useful when doodle is used to search different types of files (or is operated with different extractor options).  Using this option doodle can be used to build specialized indices (i.e. one per file system), which can in turn improve search performance.  When searching, you can pass a colon-separated list of database file names, in that case all databases are searched.  Note that the disk-space consumption of a single database is typically slightly smaller than if the database is split into multiple files.  Nevertheless, the space\-savings are likely to be small (a few percent).  You can also use  the environment variable DOODLE_PATH to set the list of database files to search.  The option overrides the environment variable if both are used.  If the option is not given and DOODLE_PATH is not set, "/var/lib/doodle" is used.
+ .TP 
+ \fB\-e\fR, \fB\-\-extract\fR
+ print the extracted keywords for each matching file found.  Note that this will slow down the program a lot, especially if there are many matches in the database.  Note that if the options given for libextractor are different than the options used for building the index the results may not contain the search string.
+@@ -91,7 +91,7 @@ be verbose
+ .SH "ENVIRONMENT"
+ .TP
+ .B DOODLE_PATH
+-Colon\-separated list of databases to search.  Note that when building the database this path must either only contain one filename or the option \fB\-b\fP must be used to specify the database file.  Default is "~/.doodle".
++Colon\-separated list of databases to search.  Note that when building the database this path must either only contain one filename or the option \fB\-b\fP must be used to specify the database file.  Default is "/var/lib/doodle".
+ .TP
+ .B PRUNEPATHS
+ Space\-separated list of paths to exclude.  Can be overridden with the \fB\-P\fR option.  
+diff -Naurp doodle.orig/doc/man/doodled.1 doodle/doc/man/doodled.1
+--- doodle.orig/doc/man/doodled.1	2011-09-09 19:18:29.978309912 +0200
++++ doodle/doc/man/doodled.1	2011-09-09 19:19:52.606719636 +0200
+@@ -14,7 +14,7 @@ doodled monitors your filesystem for cha
+ .SH "OPTIONS"
+ .TP
+ \fB\-d \fIFILENAME\fR, \fB\-\-database=\fIFILENAME\fR
+-use FILENAME for the location of the database (use when building or searching).  This option is particularly useful when doodle is used to search different types of files (or is operated with different extractor options).  Using this option doodle can be used to build specialized indices (i.e. one per file system), which can in turn improve search performance.  When searching, you can pass a colon-separated list of database file names, in that case all databases are searched.  Note that the disk-space consumption of a single database is typically slightly smaller than if the database is split into multiple files.  Nevertheless, the space\-savings are likely to be small (a few percent).  You can also use  the environment variable DOODLE_PATH to set the list of database files to search.  The option overrides the environment variable if both are used.  If the option is not given and DOODLE_PATH is not set, "~/.doodle" is used.
++use FILENAME for the location of the database (use when building or searching).  This option is particularly useful when doodle is used to search different types of files (or is operated with different extractor options).  Using this option doodle can be used to build specialized indices (i.e. one per file system), which can in turn improve search performance.  When searching, you can pass a colon-separated list of database file names, in that case all databases are searched.  Note that the disk-space consumption of a single database is typically slightly smaller than if the database is split into multiple files.  Nevertheless, the space\-savings are likely to be small (a few percent).  You can also use  the environment variable DOODLE_PATH to set the list of database files to search.  The option overrides the environment variable if both are used.  If the option is not given and DOODLE_PATH is not set, "/var/lib/doodle" is used.
+ .TP 
+ \fB\-D\fR, \fB\-\-debug\fR
+ do not detach from the terminal (do not daemonize).  Also will print log messages to stderr if no logfile is specified.
+@@ -49,7 +49,7 @@ be verbose
+ .SH "ENVIRONMENT"
+ .TP
+ .B DOODLE_PATH
+-Colon\-separated list of databases to search.  Note that when building the database this path must either only contain one filename or the option \fB\-b\fP must be used to specify the database file.  Default is "~/.doodle".
++Colon\-separated list of databases to search.  Note that when building the database this path must either only contain one filename or the option \fB\-b\fP must be used to specify the database file.  Default is "/var/lib/doodle".
+ .TP
+ .B PRUNEPATHS
+ Space\-separated list of paths to exclude.  Can be overridden with the \fB\-P\fR option.  
+diff -Naurp doodle.orig/src/doodle/doodle.c doodle/src/doodle/doodle.c
+--- doodle.orig/src/doodle/doodle.c	2011-09-09 19:18:30.022310130 +0200
++++ doodle/src/doodle/doodle.c	2011-09-09 19:19:52.606719636 +0200
+@@ -485,7 +485,7 @@ int main(int argc,
+ 
+   dbName = getenv("DOODLE_PATH");
+   if (NULL == dbName)
+-    dbName = "~/.doodle";
++    dbName = "/var/lib/doodle/doodle.db";
+   tmp = getenv("PRUNEPATHS");
+   if (tmp != NULL)
+     prunepaths = tmp;
+diff -Naurp doodle.orig/src/doodle/doodled.c doodle/src/doodle/doodled.c
+--- doodle.orig/src/doodle/doodled.c	2011-09-09 19:18:30.022310130 +0200
++++ doodle/src/doodle/doodled.c	2011-09-09 19:19:52.606719636 +0200
+@@ -800,7 +800,7 @@ int main(int argc,
+ 
+   dbName = getenv("DOODLE_PATH");
+   if (NULL == dbName)
+-    dbName = "~/.doodle";
++    dbName = "/var/lib/doodle/doodle.db";
+   tmp = getenv("PRUNEPATHS");
+   if (tmp != NULL)
+     prunepaths = tmp;

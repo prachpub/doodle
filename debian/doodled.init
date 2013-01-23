@@ -1,0 +1,75 @@
+#!/bin/sh
+
+### BEGIN INIT INFO
+# Provides:			doodled
+# Required-Start:		$remote_fs
+# Required-Stop:		$remote_fs
+# Should-Start:
+# Should-Stop:
+# Default-Start:		2 3 4 5
+# Default-Stop:			0 1 6
+# Short-Description:		starts doodled
+# Description:			doodled is a desktop search engine daemon.
+### END INIT INFO
+
+PATH="/sbin:/bin:/usr/sbin:/usr/bin"
+DAEMON="/usr/bin/doodled"
+NAME="doodled"
+DESC="doodle daemon"
+
+test -x ${DAEMON} || exit 0
+
+# Include doodle defaults if available
+if [ -f /etc/default/doodled ]
+then
+	. /etc/default/doodled
+else
+	exit 0
+fi
+
+#set -e
+
+case "${1}" in
+	start)
+		echo -n "Starting ${DESC}: "
+		if [ -e ${DOODLE_PATH} ]
+		then
+			start-stop-daemon --start --quiet --pidfile /var/run/${NAME}.pid --exec ${DAEMON} -- ${DAEMON_OPTS}
+			echo "${NAME}."
+		else
+			echo "halted (you may want to run doodle first)"
+		fi
+		;;
+
+	stop)
+		echo -n "Stopping ${DESC}: "
+		start-stop-daemon --stop --quiet --pidfile /var/run/${NAME}.pid --exec ${DAEMON}
+		echo "${NAME}."
+		;;
+
+	restart|force-reload)
+		echo -n "Restarting ${DESC}: "
+		start-stop-daemon --stop --quiet --pidfile /var/run/${NAME}.pid --exec ${DAEMON}
+		sleep 1
+		start-stop-daemon --start --quiet --pidfile /var/run/${NAME}.pid --exec ${DAEMON} -- ${DAEMON_OPTS}
+		echo "${NAME}."
+		;;
+
+	status)
+		if [ -f /var/run/${NAME}.pid ]
+		then
+			echo "doodled is running."
+		else
+			echo "doodled is not running."
+			exit 1
+		fi
+		;;
+
+	*)
+		N=/etc/init.d/${NAME}
+		echo "Usage: ${N} {start|stop|restart|force-reload|status}" >&2
+		exit 1
+		;;
+esac
+
+exit 0

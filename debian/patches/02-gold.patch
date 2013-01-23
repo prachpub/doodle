@@ -1,0 +1,15 @@
+Author: Angel Abad <angelabad@gmail.com>
+Description: Add -lextractor to fix FTBFS with binutils-gold (Closes: #638852).
+
+diff -Naurp doodle.orig/src/doodle/Makefile.in doodle/src/doodle/Makefile.in
+--- doodle.orig/src/doodle/Makefile.in	2010-01-14 11:50:44.000000000 +0100
++++ doodle/src/doodle/Makefile.in	2011-09-09 19:08:56.204389062 +0200
+@@ -251,7 +251,7 @@ LIBICONV = @LIBICONV@
+ LIBINTL = @LIBINTL@
+ LIBOBJS = @LIBOBJS@
+ LIBS = \
+- @LTLIBINTL@ @LIBS@
++ @LTLIBINTL@ @LIBS@ -lextractor
+ 
+ LIBTOOL = @LIBTOOL@
+ LIPO = @LIPO@

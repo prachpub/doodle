@@ -1,0 +1,345 @@
+doodle (0.7.0-6) experimental; urgency=low
+
+  * New maintainer. (Closes: #660437)
+  * Add watch file from Bart Martens.
+  * Build with hardening flags:
+    - Bump debhelper compat to level 9.
+    - Add dpkg-dev (>= 1.16.1~) to Build-Deps.
+    - Add  debhelper (>= 9).
+  * Multiarch support:
+    - Add "Pre-Depends: ${misc:Pre-Depends}" for libdoodle1.
+    - Replace /usr/lib/ with /usr/lib/*/ in {libdoodle1,libdoodle-dev}.install
+      ,debian/rules.
+    - Add "Multi-Arch: same" for libdoodle1.
+  * Add symbols file for libdoodle1.
+  * Add patch 03-fix-hyphen-used-as-minus-sign.
+  * Bump to Standards-Version 3.9.4, no changes needed.
+  * Update copyright file to version 1.0 format.
+
+ -- Prach Pongpanich <prachpub@gmail.com>  Wed, 23 Jan 2013 14:47:54 +0700
+
+doodle (0.7.0-5) unstable; urgency=low
+
+  * QA upload. (Closes: #674333)
+  * control: don't hardcode depends on libextractor1c2a. (Closes: #662608)
+
+ -- Holger Levsen <holger@debian.org>  Mon, 28 May 2012 00:44:34 +0200
+
+doodle (0.7.0-4) experimental; urgency=low
+
+  * Orpahning package.
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Sun, 19 Feb 2012 09:19:05 +0000
+
+doodle (0.7.0-3) experimental; urgency=low
+
+  * Updating maintainer and uploaders fields.
+  * Removing vcs fields.
+  * Removing references to my old email address.
+  * Switching to source format 3.0 (quilt).
+  * Making packaging distribution neutral.
+  * Compacting copyright file.
+  * Updating year in copyright file.
+  * Updating to standards version 3.9.2.
+  * Using getent rather than sg doodle postinst script.
+  * Simplifying autotools handling in rules.
+  * Adding patch from Angel Abad <angelabad@gmail.com> to fix FTBFS with
+    binutils-gold (Closes: #638852).
+  * Rediffing database-name.patch.
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Fri, 09 Sep 2011 19:01:08 +0200
+
+doodle (0.7.0-2) experimental; urgency=low
+
+  * Adding missing epoche in libextractor build-depends (Closes:
+    #598958).
+  * Updating to debhelper version 8.
+  * Updating to standards version 3.9.1.
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Sun, 17 Oct 2010 21:34:54 +0200
+
+doodle (0.7.0-1) experimental; urgency=low
+
+  * Adding explicit source version 1.0 until switch to 3.0.
+  * Updating year in copyright file.
+  * Adding upstream version 0.7.0.
+  * Making build-depends on libextractor versioned to 0.6.0.
+  * Removing superfluous depends of libdoodle-dev.
+  * Updating to standards 3.8.4.
+  * Changing dh call to more common scheme.
+  * Updating year in copyright file.
+  * Removing open-arguments.patch, went upstream.
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Sun, 21 Feb 2010 16:52:53 +0100
+
+doodle (0.6.7-9) unstable; urgency=low
+
+  * Adding maintainer homepage field to control.
+  * Marking maintainer homepage field to be also included in binary
+    packages and changelog.
+  * Adding README.source.
+  * Simplifying autotools handling in rules.
+  * Updating README.source.
+  * Moving maintainer homepage from control to copyright.
+  * Updating chown calls to use colons instead of stops.
+  * Simplyfing debhelper install file.
+  * Bumping versioned build-depends on debhelper.
+  * Bumping versioned build-depends on quilt.
+  * Applying some shell code cosmetics to maintainer scripts, init
+    script and cron script.
+  * Dropping la files.
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Tue, 17 Nov 2009 19:56:00 +0100
+
+doodle (0.6.7-8) unstable; urgency=low
+
+  * Updating to standards version 3.8.3.
+  * Removing bashism in cron.daily (Closes: #541781).
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Mon, 24 Aug 2009 11:10:49 +0200
+
+doodle (0.6.7-7) unstable; urgency=low
+
+  * Removing not required sourcedir parameter from dh_install override.
+  * Correcting incorrect dependencies on init script, thanks to Raphael
+    Geissert <geissert@debian.org> (Closes: #541545).
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Fri, 14 Aug 2009 21:04:31 +0200
+
+doodle (0.6.7-6) unstable; urgency=low
+
+  * Applying patch from eo <eo@khabs.org.ru> in order to make the doodle
+    cronjob cope with multiple directories (Closes: #528282).
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Tue, 11 Aug 2009 07:48:32 +0200
+
+doodle (0.6.7-5) unstable; urgency=low
+
+  * Updating section for doodle-dbg.
+  * Updating maintainer field.
+  * Updating vcs fields.
+  * Using correct rfc-2822 date formats in changelog.
+  * Updating package to standards version 3.8.2.
+  * Wrapping lines in control.
+  * Removing leftover homepage entry in package long-description.
+  * Minimizing rules file.
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Tue, 11 Aug 2009 00:27:43 +0200
+
+doodle (0.6.7-4) unstable; urgency=low
+
+  * Updating vcs fields in control file.
+  * Using patch-stamp rather than patch in rules file.
+  * Removing config.guess and config.sub in clean target of rules.
+  * Replacing obsolete dh_clean -k with dh_prep.
+  * Updating to standards version 3.8.1.
+  * Updating year in copyright file.
+  * Using quilt rather than dpatch.
+  * Updating rules file to current state of the art.
+  * Adding patch from James Westby <jw+debian@jameswestby.net> to add
+    missing mode argument to open(2) call with O_CREAT (Closes: #506555).
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Sat, 21 Mar 2009 08:41:00 +0100
+
+doodle (0.6.7-3) unstable; urgency=low
+
+  * Reordering rules file.
+  * Rewriting copyright file in machine-interpretable format.
+  * Adding vcs fields in control file.
+  * Upgrading package to standards 3.8.0.
+  * Upgrading package to debhelper 7.
+  * Removing watch file.
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Thu, 03 Jul 2008 16:24:00 +0200
+
+doodle (0.6.7-2) unstable; urgency=low
+
+  * When very early times, when doodle libraries did not have had a proper
+    soname, we were installing those libs as private libs into
+    /usr/lib/doodle. This is, since quite a while, not needed anymore.
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Sun, 23 Dec 2007 23:29:00 +0100
+
+doodle (0.6.7-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Thu, 06 Dec 2007 09:26:00 +0100
+
+doodle (0.6.6-7) unstable; urgency=low
+
+  * Adding debug package.
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Wed, 26 Sep 2007 10:59:00 +0200
+
+doodle (0.6.6-6) unstable; urgency=low
+
+  * Added chown call to doodle.cron.daily (Closes: #432990).
+  * Minor formal cleanups.
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Sun, 15 Jul 2007 22:38:00 +0200
+
+doodle (0.6.6-5) unstable; urgency=medium
+
+  * Disabled set -e in doodled.init (Closes: #426825).
+  * Added recommends to libextractor-plugins.
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Fri, 01 Jun 2007 12:08:00 +0200
+
+doodle (0.6.6-4) unstable; urgency=low
+
+  * Check for existence of delgroup in doodle.postrm (Closes: #416741).
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Fri, 30 Mar 2007 08:42:00 +0200
+
+doodle (0.6.6-3) unstable; urgency=low
+
+  * Rebuild against gamin.
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Thu, 08 Feb 2007 12:19:00 +0100
+
+doodle (0.6.6-2) unstable; urgency=low
+
+  * Minor cleanups.
+  * Adjusted libdoodle-dev dependencies.
+  * Added lsb header and status target to init script.
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Fri, 19 Jan 2007 12:30:00 +0100
+
+doodle (0.6.6-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Wed, 03 Jan 2007 14:03:00 +0200
+
+doodle (0.6.5-5) unstable; urgency=medium
+
+  * Adjusted defaults which fixes the cronjob (Closes: #379729).
+  * Adjusted depends to the splitted libextractor.
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Sun, 29 Oct 2006 12:36:00 +0200
+
+doodle (0.6.5-4) unstable; urgency=low
+
+  * New email address.
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Sun, 10 Sep 2006 11:49:00 +0200
+
+doodle (0.6.5-3) unstable; urgency=low
+
+  * Adjusted chown call in cronjob again (Closes: #369499).
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Thu, 22 Jun 2006 20:11:00 +0200
+
+doodle (0.6.5-2) unstable; urgency=low
+
+  * Adjusted cronjob (Closes: #368598).
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Thu, 25 May 2006 18:34:00 +0200
+
+doodle (0.6.5-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Wed, 03 May 2006 00:00:00 +0100
+
+doodle (0.6.3+2496-2) unstable; urgency=low
+
+  * Fixed descriptions' spelling (Closes: #363262).
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Tue, 18 Apr 2006 09:16:00 +0100
+
+doodle (0.6.3+2496-1) unstable; urgency=low
+
+  * New snapshot:
+    - improves documentation about full-text indexing (Closes: #348885).
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Sun, 12 Mar 2006 09:05:00 +0100
+
+doodle (0.6.3-1) unstable; urgency=low
+
+  * New upstream release (Closes: #323370).
+  * Updated depends to latest transition of libextractor (Closes: #334515).
+  * Corrected cron-script (Closes: #324603, #324957).
+  * Updating config.{sub,guess} now via diff.gz.
+  * Using now dpatch to set the doodle database name.
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Thu, 10 Nov 2005 20:21:00 +0100
+
+doodle (0.6.2-4) unstable; urgency=high
+
+  * fixed doodle.postinst exception for non existing doodledb (Closes: #309120).
+  * improved doodle.cron.dail (Closes: #305003).
+  * changed from *.files to *.install.
+  * corrected depency informations.
+  * renamed libdoodle1-dev package to libdoodle-dev.
+  * bumped policy to 3.6.2.
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Fri, 08 Jul 2005 14:11:00 +0200
+
+doodle (0.6.2-3) unstable; urgency=high
+
+  * debian/doodle.postinst: fixed permission (Closes: #305595).
+  * debian/rules: added start/stop number for initscript (Closes: #305661).
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Wed, 11 May 2005 20:42:00 +0200
+
+doodle (0.6.2-2) unstable; urgency=high
+
+  * debian/control: added conflict to old version (Closes: #296052).
+  * debian/control: changed priority to optional.
+  * debian/control: updated descriptions (Closes: #296129).
+  * debian/doodle.cron.daily: fixed typo (Closes: #298655).
+  * debian/doodled.init.d: fixed wrong doodled-path (Closes: #296402).
+  * debian/README.Debian: renamed to doodle.README.Debian, fixed typo (Closes:
+    #296081).
+  * debian/doodled.post{inst,rm}: fixed lintian errors, using only
+    dh_installinit.
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Sat, 19 Mar 2005 18:15:00 +0100
+
+doodle (0.6.2-1) unstable; urgency=high
+
+  * New upstream release, fixes:
+    - broken png handling (Closes: #278905).
+    - broken doodle.db on doodle crash (Closes: #279057).
+  * documentation updated with new project urls.
+  * src/doodle/doodle{,d}.c: added /sys to the prunepath.
+  * debian/* redone, splitted package into individual binary-packages.
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Tue, 01 Feb 2005 20:14:00 +0100
+
+doodle (0.5.0-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Sun, 10 Oct 2004 06:10:00 +0200
+
+doodle (0.4.0-1) unstable; urgency=high
+
+  * New upstream release (Closes #267960).
+  * debian/README.Debian: fixed text width.
+  * debian/control: start description lowercase.
+  * debian/control: updated policy.
+  * debian/control: set dependency version for libextractor (Closes #268296 and #266945).
+  * src/doodle/doodle.c: add search-string-size fix from cvs.
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Tue, 15 Sep 2004 15:56:00 +0200
+
+doodle (0.3.0-1) unstable; urgency=low
+
+  * New upstream realease.
+  * debian/README.debian: documented changes.
+  * debian/control: added dependency to adduser.
+  * debian/cron.daily: added cron file.
+  * debian/postinst: adds doodle group and directory.
+  * debian/postrm: removes doodle group.
+  * src/doodle/doodle.c: changed dbName from '~/.doodle' to '/var/lib/doodle/doodle.db'
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Sun, 15 Aug 2004 21:50:04 +0200
+
+doodle (0.2.1-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Daniel Baumann <daniel.baumann@progress-technologies.net>  Wed, 11 Aug 2004 15:11:23 +0200

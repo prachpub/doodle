@@ -1,0 +1,93 @@
+Source: doodle
+Section: utils
+Priority: optional
+Maintainer: Prach Pongpanich <prachpub@gmail.com>
+Build-Depends: autotools-dev,
+               debhelper (>= 9),
+               dpkg-dev (>= 1.16.1~),
+               libextractor-dev (>= 1:0.6.0),
+               libgamin-dev
+Standards-Version: 3.9.4
+Homepage: http://www.gnunet.org/doodle/
+
+Package: doodle
+Architecture: any
+Depends: adduser, ${misc:Depends}, ${shlibs:Depends}
+Recommends: libextractor-plugins
+Description: Desktop Search Engine (client)
+ It searches your hard drive for files using pattern matching on meta-data. It
+ extracts file-format specific meta-data using libextractor and builds a suffix
+ tree to index the files. The index can then be searched rapidly. It is similar
+ to locate, but can take advantage of information such as ID3 tags. It is
+ possible to do full-text indexing using the appropriate libextractor plugins.
+ It also supports using FAM to keep the database up-to-date.
+ .
+ You can use doodled (separate package) to keep the doodle database
+ automagically updated.
+
+Package: doodle-dbg
+Section: debug
+Priority: extra
+Architecture: any
+Depends: doodle (= ${binary:Version}),
+         doodled (= ${binary:Version}),
+         libdoodle-dev (= ${binary:Version}),
+         libdoodle1 (= ${binary:Version}),
+         ${misc:Depends}
+Description: Desktop Search Engine (debug)
+ It searches your hard drive for files using pattern matching on meta-data. It
+ extracts file-format specific meta-data using libextractor and builds a suffix
+ tree to index the files. The index can then be searched rapidly. It is similar
+ to locate, but can take advantage of information such as ID3 tags. It is
+ possible to do full-text indexing using the appropriate libextractor plugins.
+ It also supports using FAM to keep the database up-to-date.
+ .
+ This package contains the debugging symbols.
+
+Package: doodled
+Architecture: any
+Depends: doodle (= ${binary:Version}),
+         gamin,
+         portmap,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Desktop Search Engine (daemon)
+ It searches your hard drive for files using pattern matching on meta-data. It
+ extracts file-format specific meta-data using libextractor and builds a suffix
+ tree to index the files. The index can then be searched rapidly. It is similar
+ to locate, but can take advantage of information such as ID3 tags. It is
+ possible to do full-text indexing using the appropriate libextractor plugins.
+ It also supports using FAM to keep the database up-to-date.
+ .
+ This is the daemon to keep the doodle database automagically up-to-date.
+
+Package: libdoodle1
+Section: libs
+Architecture: any
+Multi-Arch: same
+Depends: libextractor-plugins, ${misc:Depends}, ${shlibs:Depends}
+Pre-Depends: ${misc:Pre-Depends}
+Description: Desktop Search Engine (library)
+ It searches your hard drive for files using pattern matching on meta-data. It
+ extracts file-format specific meta-data using libextractor and builds a suffix
+ tree to index the files. The index can then be searched rapidly. It is similar
+ to locate, but can take advantage of information such as ID3 tags. It is
+ possible to do full-text indexing using the appropriate libextractor plugins.
+ It also supports using FAM to keep the database up-to-date.
+ .
+ This is the library to access the doodle database from other applications.
+
+Package: libdoodle-dev
+Section: libdevel
+Architecture: any
+Depends: libdoodle1 (= ${binary:Version}), ${misc:Depends}
+Description: Desktop Search Engine (development)
+ It searches your hard drive for files using pattern matching on meta-data. It
+ extracts file-format specific meta-data using libextractor and builds a suffix
+ tree to index the files. The index can then be searched rapidly. It is similar
+ to locate, but can take advantage of information such as ID3 tags. It is
+ possible to do full-text indexing using the appropriate libextractor plugins.
+ It also supports using FAM to keep the database up-to-date.
+ .
+ This is the library to access the doodle database from other applications
+ (development files).
