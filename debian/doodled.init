@@ -16,8 +16,11 @@ PATH="/sbin:/bin:/usr/sbin:/usr/bin"
 DAEMON="/usr/bin/doodled"
 NAME="doodled"
 DESC="doodle daemon"
+PIDFILE="/var/run/${NAME}.pid"
 
 test -x ${DAEMON} || exit 0
+
+. /lib/lsb/init-functions
 
 # Include doodle defaults if available
 if [ -f /etc/default/doodled ]
@@ -31,38 +34,34 @@ fi
 
 case "${1}" in
 	start)
-		echo -n "Starting ${DESC}: "
 		if [ -e ${DOODLE_PATH} ]
 		then
-			start-stop-daemon --start --quiet --pidfile /var/run/${NAME}.pid --exec ${DAEMON} -- ${DAEMON_OPTS}
-			echo "${NAME}."
+			log_daemon_msg "Starting ${DESC}" "${NAME}"
+			start-stop-daemon --start --quiet --pidfile ${PIDFILE} --make-pidfile --background --oknodo --exec ${DAEMON} -- ${DAEMON_OPTS}
+			log_end_msg $?
 		else
-			echo "halted (you may want to run doodle first)"
+			log_warning_msg "halted (you may want to run doodle first)"
 		fi
 		;;
 
 	stop)
-		echo -n "Stopping ${DESC}: "
-		start-stop-daemon --stop --quiet --pidfile /var/run/${NAME}.pid --exec ${DAEMON}
-		echo "${NAME}."
+		log_daemon_msg "Stopping ${DESC}" "${NAME}"
+		start-stop-daemon --stop --quiet --pidfile ${PIDFILE} --oknodo --exec ${DAEMON}
+		log_end_msg $?
+		rm -f ${PIDFILE}
 		;;
 
 	restart|force-reload)
-		echo -n "Restarting ${DESC}: "
-		start-stop-daemon --stop --quiet --pidfile /var/run/${NAME}.pid --exec ${DAEMON}
+		log_daemon_msg "Restarting ${DESC}" "${NAME}"
+		start-stop-daemon --stop --quiet --pidfile ${PIDFILE} --oknodo --exec ${DAEMON}
+		rm -f ${PIDFILE}
 		sleep 1
-		start-stop-daemon --start --quiet --pidfile /var/run/${NAME}.pid --exec ${DAEMON} -- ${DAEMON_OPTS}
-		echo "${NAME}."
+		start-stop-daemon --start --quiet --pidfile ${PIDFILE} --make-pidfile --background --oknodo --exec ${DAEMON} -- ${DAEMON_OPTS}
+		log_end_msg $?
 		;;
 
 	status)
-		if [ -f /var/run/${NAME}.pid ]
-		then
-			echo "doodled is running."
-		else
-			echo "doodled is not running."
-			exit 1
-		fi
+		status_of_proc -p $PIDFILE "${DAEMON}" "${NAME}"
 		;;
 
 	*)
