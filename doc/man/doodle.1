@@ -1,0 +1,116 @@
+.TH DOODLE "1" "Jan 1 2010" "doodle"
+
+.SH "NAME"
+doodle \- a tool to search the meta\-data in your files
+
+.SH "SYNOPSIS"
+.B doodle
+[\fIOPTIONS\fR] ([FILENAMES]*|[KEYWORDS]*)
+
+.SH "DESCRIPTION"
+.PP
+doodle is a tool to index files.  doodle uses libextractor to find meta\-data in files.  Once a database has been built, doodle can be used to quickly find files of which the meta-data matches a given search\-string.  This way, doodle can be used to quickly search your file system.
+.TP
+Generally, the first time you run doodle you pass the option \-b to build the database.  Together with \-b you specify the list of files or directories to index, for example 
+
+$ doodle \-b $HOME
+
+.TP
+Indexing with doodle is incremental.  If doodle \-b is run (with the same database) twice it will update the index for files that were changed.  doodle will also remove files that are no longer accessible.  doodle will NOT remove files that are still present but no longer specified in the argument list.  Thus invoking either
+
+$ doodle \-b /foo /bar  # or
+
+$ doodle \-b /foo ; doodle \-b /bar
+
+.TP
+will result in the same database containing both the index for /foo and /bar.  Note that the only way to only un-index /foo at this point is to make /foo inaccessible (using for example chmod 000 /foo or even rm -rf /foo) and then run doodle \-b again.
+
+.TP
+In networked environments, it often makes sense to build a database at the root of each file system, containing the entries for that  file system.  For this, doodle is run for each file system on the file server where that file system is on a local disk, to prevent thrashing the network.  Users can select which databases doodle searches. Databases cannot be concatenated together.
+
+.TP
+Once the files have been indexed, you can quickly query the doodle database.  Just run
+
+$ doodle keyword
+
+.TP
+to search all of your files for keyword.  Note that only the meta-data extracted by libextractor is searched.  Thus if libextractor does not find any meta-data in the files, you may not get any results.  You can use the option \-l to specify non-standard libextractor plugins.  For example, doodle could be used to replace the locate tool from the GNU findutils like this:
+
+$ alias updatedb="doodle \-bn \-d ~/.doodle\-locate\-db \-l libextractor_filename /"
+
+$ alias locate="doodle \-d ~/.doodle\-locate\-db"
+
+
+.SH "OPTIONS"
+.TP
+\fB\-a \fINUMBER\fR, \fB\-\-approximate=\fINUMBER\fR
+do approximate matching with mismatches of up to NUMBER letters
+.TP
+\fB\-b, \fB\-\-build\fR
+build the doodle database (passed arguments are directories and filenames that are to be indexed).  In comparison with GNU locate the doodle binary encapsulates both the locate and the updatedb tool.  Using the \fB\-b\fR option doodle builds or updates the database (equivalent to updatedb), without \fB\-b\fR it behaves similar to locate.
+.TP 
+\fB\-d \fIFILENAME\fR, \fB\-\-database=\fIFILENAME\fR
+use FILENAME for the location of the database (use when building or searching).  This option is particularly useful when doodle is used to search different types of files (or is operated with different extractor options).  Using this option doodle can be used to build specialized indices (i.e. one per file system), which can in turn improve search performance.  When searching, you can pass a colon-separated list of database file names, in that case all databases are searched.  Note that the disk-space consumption of a single database is typically slightly smaller than if the database is split into multiple files.  Nevertheless, the space\-savings are likely to be small (a few percent).  You can also use  the environment variable DOODLE_PATH to set the list of database files to search.  The option overrides the environment variable if both are used.  If the option is not given and DOODLE_PATH is not set, "~/.doodle" is used.
+.TP 
+\fB\-e\fR, \fB\-\-extract\fR
+print the extracted keywords for each matching file found.  Note that this will slow down the program a lot, especially if there are many matches in the database.  Note that if the options given for libextractor are different than the options used for building the index the results may not contain the search string.
+.TP
+\fB\-f\fR, \fB\-\-filenames\fR
+include filenames (full path) in the set of keywords
+.TP
+\fB\-h\fR, \fB\-\-help\fR
+print help page
+.TP
+\fB\-i, \fB\-\-ignore\-case\fR
+be case-insensitive
+.TP
+\fB\-l \fILIBRARIES\fR, \fB\-\-library=\fILIBRARIES\fR
+specify which libextractor plugins to use (for building the index with \-b or for printing information about files with \-e)
+.TP
+\fB\-L \fIFILENAME\fR, \fB\-\-log=\fIFILENAME\fR
+log all encountered keywords into a log file named FILENAME.  This option is mostly useful for debugging.
+.TP
+\fB\-m \fILIMIT\fR\fR, \fB\-\-memory=\fILIMIT\fR
+use at most LIMIT MB of memory for the nodes of the suffix-tree (after that, serialize to disk).  Note that a smaller value will reduce memory consumption but increase the size of the temporary file (and slow down indexing).  The default is 8 MB.
+.TP
+\fB\-n\fR, \fB\-\-nodefault\fR
+do not load the default set of plugins (only load plugins specified with \-l)
+.TP
+\fB\-p\fR, \fB\-\-print\fR
+make a human-readable screen dump of the doodle database (only really useful for debugging)
+.TP
+\fB\-P \fIPATH\fR, \fB\-\-prunepaths=\fIPATH\fR
+Directories to not put in the database, which would otherwise be. The environment variable PRUNEPATHS also sets this value. Default is "/tmp /usr/tmp /var/tmp /dev /proc /sys".  This option can also be used when searching, in which case search results in the specified directories will be ignored.
+.TP
+\fB\-v\fR, \fB\-\-version\fR
+print the version number
+.TP
+\fB\-V\fR, \fB\-\-verbose\fR
+be verbose
+
+.SH "ENVIRONMENT"
+.TP
+.B DOODLE_PATH
+Colon\-separated list of databases to search.  Note that when building the database this path must either only contain one filename or the option \fB\-b\fP must be used to specify the database file.  Default is "~/.doodle".
+.TP
+.B PRUNEPATHS
+Space\-separated list of paths to exclude.  Can be overridden with the \fB\-P\fR option.  
+
+.SH "NOTES"
+Doodle depends on libextractor.  You can download libextractor
+from http://gnunet.org/libextractor/.
+
+.SH "SEE ALSO"
+\fBextract\fP(1), \fBslocate\fP(1), \fBupdatedb\fP(1), \fBlibextractor\fP(3), \fBlibdoodle\fP(3)
+
+.SH "LEGAL NOTICE"
+libdoodle and doodle are released under the GPL.
+
+.SH "REPORTING BUGS"
+Report bugs to mantis <https://gnunet.org/bugs/> or by sending electronic mail to <christian@grothoff.org>
+
+.SH "AUTHORS"
+doodle was originally written by Christian Grothoff <christian@grothoff.org>.
+
+.SH "AVAILABILITY"
+You can obtain the original author's latest version from http://grothoff.org/christian/doodle/.

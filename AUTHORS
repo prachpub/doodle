@@ -1,0 +1,20 @@
+Primary developer:
+Christian Grothoff <christian@grothoff.org>
+
+Code contributions also came from:
+Robert Sander <robert.sander@epigenomics.com>
+Voker Weiss <volker@titunc.de>
+Alan Post <terminal@c0redump.org>
+
+Doodle uses 
+- libextractor (http://gnunet.org/libextractor/, GPL)
+- libfam (SGI, GPL)
+
+Translation credits:
+Albanian: Laurent Dhima
+Basque:   Mikel Olasagasti
+Dutch:    Elros Cyriatan
+German:   Karl Eichwalder
+Irish:    Kevin Patrick Scannell
+Italian:  Marco Colombo
+Swedish:  Daniel Nylander

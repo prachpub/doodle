@@ -1,0 +1,146 @@
+QUICKSTART:
+===========
+
+Install libextractor first.  You can obtain the sources from
+http://www.gnu.org/software/libextractor/.  This version of doodle
+requires GNU libextractor >= 0.6.0.  If you use Debian, try "apt-get
+install libextractor-dev".  You also need to install and run fam (file
+alteration monitor) if you want to use doodled.
+
+Building doodle is then trivial:
+$ ./configure --with-extractor=PREFIX
+$ make
+# make install
+
+Replace PREFIX with the directory where you installed libextractor.
+This is /usr/local if you configured libextractor without any options
+and /usr if you used a binary package of your distribution.  Note that
+the extractor header file must be available under
+PREFIX/include/extractor.h, otherwise configure will fail.  If fam
+is not found, doodled will not be built.
+
+
+USAGE:
+======
+
+First, run 
+
+$ doodle -bf $HOME
+
+to index your home-directory (-f to include filenames).  Then run
+
+$ doodle keyword
+
+to search for "keyword" in $HOME.  Doodle supports multiple databases
+(specify the filename for the database with -d, the default is
+~/.doodle).  Many other doodle options are used to control the
+behavior of libextractor.  See the man page for details.
+
+
+You can also use doodled to keep your doodle database up-to-date.
+doodled uses FAM to keep track of changes to the filesystem.  doodled
+immediately updates the doodle database in the background.  You may
+want to start doodled during system startup, like this:
+
+$ doodled $HOME
+
+If you want to cleanly shutdown doodled, send the SIGINT or SIGTERM
+signal to the doodled process.
+
+
+INTERNALS (or: how doodle was made so fast):
+============================================
+
+doodle uses a suffix-tree for performing lookups.  Each node in the
+tree represents a letter in a string.  By following the letters of the
+search-string one will find the subtree that contains the files which
+contain matching keywords.  This data-structure makes the lookup very
+fast.
+
+For incremental indexing doodle uses the modification timestamp of the
+file to keep track of modifications.  This way doodle can avoid
+unnecessary calls to libextractor and needless insertions into the
+database.
+
+In order to save space doodle deploys a couple of tricks.  First, when
+storing integers on disk, we first store the number of bytes needed
+(as a character with values from 0 to 4).  That value is then followed
+by 0 to 4 bytes containing the integer value.  Since most integers are
+small, this saves up to 75% space on integers, in particular since for
+the on-disk integers we store offsets relative to the position of the
+record, which ensures that we get small numbers (and the way the DB is
+structured they are all always small positive numbers).  
+
+Most strings stored by doodle are the filenames.  doodle uses
+interning to store all filenames only once (interning is used both for
+the database as well for storage in memory at run-time).  For the
+database doodle reduces storage requriements further by storing the
+names of directories in a separate table. The actual filename only
+contains an index into that table.  Since directory names often occur
+multiple times this can also save lots of space.  
+
+Finally the suffix-tree is compacted by simplifying the tree.  For
+nodes that have no links, no filenames and only one child we can
+replace the default single-character representation with a
+multi-character node.  Since these text-sequences occur typically
+multiple times in the graph (remember that the same keyword is indexed
+starting at any position in the keyword) we intern those sequences
+(cis table).  Interning is again made more efficient by using doodle's
+search capabilities to find common shared sequences (while building
+the tree we use the existing tree to do the interning).  This is
+dramatically reduces both memory and on-disk space requirements (by
+about a factor of 4).
+
+doodle avoids using system calls to read and write.  Instead those
+calls are mapped to a specialized IO buffer subsystem.  In the case of
+read the system uses heuristics to both try to align the read-buffer
+with the blocks in the underlying filesystem (to avoid requiring the
+kernel to perform two physical read operations) and to read a single
+block in a way that might possibly already include the data required
+in the next round (trying to predict in which region the next seek
+will be is possible since all offsets are small numbers pointing to
+earlier locations in the file).  For writing, the subsystem buffers
+multiple writes and only writes to disk in large chunks.  This
+improves IO performance by a factor of 4-5.
+
+
+PERFORMANCE DATA (0.3.0)
+========================
+
+This is just some rough data for a RH 9 installation on a PIV-3000.
+
+* locate (system-wide minus /dev, /proc) takes 3-4 MB disk-space
+  (but note that the index only contains filenames)
+* find (system-wide): listing the names of 122.000 files in 
+  10.000 directories, takes 0.200s!
+
+Running doodle on "/usr" takes about 20 minutes and 250 MB memory to
+build the initial database.  The database is about 100 MB on the disk.
+It takes 0.1s to execute a query like "server" which gives over 250
+results, including results like
+
+/usr/share/doc/nfs-utils-1.0.1/nfs.html
+  (server in HTML title tag)
+/usr/share/doc/HTML/en/kaddressbook/index.docbook 
+  (server in text body)
+/usr/bin/knotify
+  (links against libsoundserver_idl.so.1)
+
+Note that performance has been improved since 0.3.0, in particular
+with respect to memory requirements which can now be much smaller
+depending on the given options.
+
+
+
+libdoodle
+=========
+
+If you want to access the doodle-database from your applications you
+can use libdoodle.  This library provides all the functionality needed
+in the form of a small C API.  libdoodle does NOT require libextractor
+and allows using the multi-suffix tree in many ways.  The only
+limitation is that the indexed items must be files, since libdoodle
+currently does rely on timestamps which can only be obtained from
+files.  This limitation maybe removed in future versions.  Note that
+libdoodle is licensed under the GNU Public License.
+

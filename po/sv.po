@@ -1,0 +1,596 @@
+# Swedish translation of doodle.
+# Copyright (C) 2005, 2007 Christian Grothoff
+# This file is distributed under the same license as the doodle package.
+# Daniel Nylander <po@danielnylander.se>, 2005, 2007
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: doodle 0.6.7\n"
+"Report-Msgid-Bugs-To: https://gnunet.org/mantis/ or christian@grothoff.org\n"
+"POT-Creation-Date: 2010-01-14 11:52+0100\n"
+"PO-Revision-Date: 2007-12-11 00:32+0100\n"
+"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
+"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/doodle/doodle.c:67
+msgid "consider strings to match if DISTANCE letters are different"
+msgstr "anse att strängar matchar om DISTANCE bokstäver är olika"
+
+#: src/doodle/doodle.c:69
+msgid "build database (default is to search)"
+msgstr "bygg databas (standard är att söka)"
+
+#: src/doodle/doodle.c:71 src/doodle/doodled.c:61
+msgid "use location FILENAME to store doodle database"
+msgstr "använd FILENAME för att lagra doodles databas"
+
+#: src/doodle/doodle.c:73
+msgid "for each matching file, print the extracted keywords"
+msgstr "för varje matchande fil, skriv ut extraherade nyckelord"
+
+#: src/doodle/doodle.c:75
+msgid "add the filename to the list of keywords (use when building database)"
+msgstr ""
+"lägg till filnamnet till listan av nyckelord (använd vid bygge av databas)"
+
+#: src/doodle/doodle.c:77 src/doodle/doodled.c:67
+msgid "print this help page"
+msgstr "skriv ut denna hjälpsida"
+
+#: src/doodle/doodle.c:79
+msgid "be case-insensitive (use when searching)"
+msgstr "var inte skiftlägeskänslig (använd vid sökning)"
+
+#: src/doodle/doodle.c:81 src/doodle/doodled.c:69
+msgid "load an extractor plugin named LIBRARY"
+msgstr "läs in instick för extraherare med namnet LIBRARY"
+
+#: src/doodle/doodle.c:83
+msgid "log keywords to a file named FILENAME"
+msgstr "logga nyckelord till en fil med namnet FILENAME"
+
+#: src/doodle/doodle.c:85 src/doodle/doodled.c:73
+msgid "do not load default set of extractor plugins"
+msgstr "läs inte in standarduppsättning med extraheringsinstick"
+
+#: src/doodle/doodle.c:87 src/doodle/doodled.c:75
+msgid "set the memory limit to SIZE MB (for the tree)."
+msgstr "ställ in minnesgräns till SIZE MB (för trädet)."
+
+#: src/doodle/doodle.c:89
+msgid "print suffix tree (for debugging)"
+msgstr "skriv ut suffixträd (för felsökning)"
+
+#: src/doodle/doodle.c:91 src/doodle/doodled.c:77
+msgid "exclude given paths from building or searching"
+msgstr "exkludera angivna sökvägar från bygge eller sökning"
+
+#: src/doodle/doodle.c:93 src/doodle/doodled.c:79
+msgid "print the version number"
+msgstr "skriv ut versionsnumret"
+
+#: src/doodle/doodle.c:95 src/doodle/doodled.c:81
+msgid "be verbose"
+msgstr "var informativ"
+
+#: src/doodle/doodle.c:98
+msgid "doodle [OPTIONS] ([FILENAMES]*|[KEYWORDS]*)"
+msgstr "doodle [FLAGGOR] ([FILNAMN]*|[NYCKELORD]*)"
+
+#: src/doodle/doodle.c:99
+msgid "Index and search meta-data of files."
+msgstr "Indexera och sök metadata i filer."
+
+# Denna är jag mycket osäker på
+#: src/doodle/doodle.c:144
+#, c-format
+msgid "Pruned: %s\n"
+msgstr "Reducerad: %s\n"
+
+#: src/doodle/doodle.c:187 src/doodle/doodled.c:328 src/doodle/doodled.c:345
+#: src/doodle/doodled.c:391 src/doodle/files.c:79 src/doodle/tree.c:2283
+#, c-format
+msgid "Call to '%s' for file '%s' failed: %s\n"
+msgstr "Anrop till \"%s\" för filen \"%s\" misslyckades: %s\n"
+
+#: src/doodle/doodle.c:195
+#, c-format
+msgid "Processing '%s'\n"
+msgstr "Behandlar \"%s\"\n"
+
+#: src/doodle/doodle.c:218 src/doodle/doodled.c:596
+#, c-format
+msgid "No database specified.  Aborting.\n"
+msgstr "Ingen databas angiven. Avbryter.\n"
+
+#: src/doodle/doodle.c:223 src/doodle/doodled.c:603
+#, c-format
+msgid ""
+"'%s' is an invalid database filename (has a colon) for building database "
+"(option '%s').\n"
+msgstr ""
+"\"%s\" är ett ogiltigt databasfilnamn (har ett kolon) för att bygga databas "
+"(flagga \"%s\").\n"
+
+#: src/doodle/doodle.c:255 src/doodle/doodled.c:585
+#, c-format
+msgid "Could not open '%s' for logging: %s.\n"
+msgstr "Kunde inte öppna \"%s\" för loggning: %s.\n"
+
+#: src/doodle/doodle.c:265 src/doodle/doodled.c:478
+#, c-format
+msgid "Indexing '%s'\n"
+msgstr "Indexerar \"%s\"\n"
+
+#: src/doodle/doodle.c:322
+#, c-format
+msgid "Keywords for matching file '%s':\n"
+msgstr "Nyckelord för matchande filen \"%s\":\n"
+
+#: src/doodle/doodle.c:343 src/doodle/doodle.c:382
+#, c-format
+msgid "No database specified. Aborting.\n"
+msgstr "Ingen databas angiven. Avbryter.\n"
+
+#: src/doodle/doodle.c:348 src/doodle/doodle.c:387
+#, c-format
+msgid "Call to '%s' for file '%s' failed: %s.\n"
+msgstr "Anrop till \"%s\" för filen \"%s\" misslyckades: %s.\n"
+
+#: src/doodle/doodle.c:423
+#, c-format
+msgid "Searching for '%s':\n"
+msgstr "Söker efter \"%s\":\n"
+
+#: src/doodle/doodle.c:426
+#, c-format
+msgid ""
+"Warning: search string is longer than %d characters, search will not work.\n"
+msgstr ""
+"Varning: söksträng är längre än %d tecken, sökning kommer inte fungera.\n"
+
+#: src/doodle/doodle.c:431
+#, c-format
+msgid ""
+"Warning: search string is longer than %d characters, search may not work "
+"properly.\n"
+msgstr ""
+"Varning: söksträng är längre än %d tecken, sökning kanske inte fungerar "
+"korrekt.\n"
+
+#: src/doodle/doodle.c:443 src/doodle/doodle.c:453
+#, c-format
+msgid "\tNot found!\n"
+msgstr "\tHittades inte!\n"
+
+#: src/doodle/doodle.c:523 src/doodle/doodle.c:579 src/doodle/doodled.c:852
+#, c-format
+msgid "You must pass a number to the '%s' option.\n"
+msgstr "Du måste skicka med ett nummer till flaggan \"%s\".\n"
+
+#: src/doodle/doodle.c:528 src/doodle/doodle.c:536 src/doodle/doodle.c:541
+#: src/doodle/doodle.c:546 src/doodle/doodle.c:566 src/doodle/doodle.c:595
+#, c-format
+msgid "The options '%s' and '%s' cannot be used together!\n"
+msgstr "Flaggorna \"%s\" och \"%s\" kan inte användas tillsammans!\n"
+
+#: src/doodle/doodle.c:584 src/doodle/doodled.c:857
+#, c-format
+msgid "Specified memory limit is too high.\n"
+msgstr "Angiven minnesgräns är för hög.\n"
+
+#: src/doodle/doodle.c:609 src/doodle/doodled.c:874
+#, c-format
+msgid "Version %s\n"
+msgstr "Version %s\n"
+
+#: src/doodle/doodle.c:614 src/doodle/doodled.c:879
+#, c-format
+msgid "Use '--help' to get a list of options.\n"
+msgstr "Använd \"--help\" för att få en lista över flaggor.\n"
+
+#: src/doodle/doodle.c:623
+#, c-format
+msgid "Invoke with filenames or directories to index!\n"
+msgstr "Anropa med filnamn eller kataloger att indexera!\n"
+
+#: src/doodle/doodle.c:624
+#, c-format
+msgid "Invoke with query terms to search for!\n"
+msgstr "Anropa med söktermer att söka efter!\n"
+
+#: src/doodle/doodled.c:63
+msgid "run in debug mode, do not daemonize"
+msgstr "kör i felsökningsläge, inte som demon"
+
+#: src/doodle/doodled.c:65
+msgid "add the filename to the list of keywords"
+msgstr "lägg till filnamnet till listan för nyckelord"
+
+#: src/doodle/doodled.c:71
+msgid "log activity to a file named FILENAME"
+msgstr "logga aktivitet till en fil med namnet FILENAME"
+
+#: src/doodle/doodled.c:84
+msgid "doodled [OPTIONS] [FILENAMES]"
+msgstr "doodled [FLAGGOR] [FILNAMN]"
+
+#: src/doodle/doodled.c:85
+msgid "Continuously index files in the background."
+msgstr "Fortsätt indexera filer i bakgrunden."
+
+#: src/doodle/doodled.c:186
+msgid "Event processing thread created.\n"
+msgstr "Tråd för bearbetning av händelser skapad.\n"
+
+#: src/doodle/doodled.c:201 src/doodle/doodled.c:220 src/doodle/index.c:176
+#: src/doodle/index.c:184 src/doodle/index.c:207 src/doodle/tree.c:181
+#: src/doodle/tree.c:189 src/doodle/tree.c:220 src/doodle/tree.c:241
+#, c-format
+msgid "Call to '%s' failed: %s\n"
+msgstr "Anrop till \"%s\" misslyckades: %s\n"
+
+#: src/doodle/doodled.c:379
+#, c-format
+msgid "Will monitor directory '%s' for changes.\n"
+msgstr "Kommer att övervaka katalogen \"%s\" efter ändringar.\n"
+
+#: src/doodle/doodled.c:426
+#, c-format
+msgid "Processing file '%s'.\n"
+msgstr "Behandlar filen \"%s\".\n"
+
+#: src/doodle/doodled.c:454
+msgid "Main worker thread created.\n"
+msgstr "Huvudarbetstråd skapad.\n"
+
+#: src/doodle/doodled.c:465
+msgid "Failed to spawn event processing thread.\n"
+msgstr "Misslyckades att starta tråd för händelsebearbetning.\n"
+
+#: src/doodle/doodled.c:472
+msgid "Registering with FAM for file system events.\n"
+msgstr "Registrerar mot FAM för filsystemhändelser.\n"
+
+#: src/doodle/doodled.c:495
+msgid "doodled startup complete.  Now waiting for FAM events.\n"
+msgstr "Uppstart av doodled klar. Väntar nu på FAM-händelser.\n"
+
+#: src/doodle/doodled.c:545
+msgid "Error disconnecting from fam.\n"
+msgstr "Fel vid nedkoppling från fam.\n"
+
+#: src/doodle/doodled.c:633
+msgid "Failed to connect to fam.  Aborting.\n"
+msgstr "Misslyckades att ansluta till fam.  Avbryter.\n"
+
+#: src/doodle/doodled.c:658
+#, c-format
+msgid "Failed to create worker thread: %s"
+msgstr "Misslyckades att skapa arbetstråd: %s"
+
+#: src/doodle/doodled.c:671
+msgid "doodled is shutting down.\n"
+msgstr "doodled stängs ner.\n"
+
+#: src/doodle/doodled.c:675
+msgid "No files exist that doodled would monitor for changes.  Exiting.\n"
+msgstr ""
+"Inga filer finns som doodled skulle övervaka efter ändringar.  Avslutar.\n"
+
+#: src/doodle/doodled.c:683
+#, c-format
+msgid "Cancelling fam monitor '%s'.\n"
+msgstr "Avbryter fam-övervakning \"%s\".\n"
+
+#: src/doodle/doodled.c:704
+msgid "Unloading libextractor plugins.\n"
+msgstr "Läser ur libextractor-instick.\n"
+
+#: src/doodle/doodled.c:886
+#, c-format
+msgid "Invoke with filenames or directories to monitor!\n"
+msgstr "Anropa med filnamn eller kataloger för övervakning!\n"
+
+#: src/doodle/files.c:71 src/doodle/tree.c:328 src/doodle/tree.c:710
+#: src/doodle/tree.c:1077 src/doodle/tree.c:1384 src/doodle/tree.c:1400
+#: src/doodle/tree.c:1436 src/doodle/tree.c:1451 src/doodle/tree.c:1471
+#: src/doodle/tree.c:2356 src/doodle/tree.c:2385
+#, c-format
+msgid "Assertion failed at %s:%d.\n"
+msgstr "Påstående misslyckades vid %s.%d.\n"
+
+#: src/doodle/files.c:107
+#, c-format
+msgid "Scanning '%s'\n"
+msgstr "Söker av \"%s\"\n"
+
+#: src/doodle/files.c:115
+#, c-format
+msgid "Access to directory '%s' was denied.\n"
+msgstr "Tillgång till katalog \"%s\" nekades.\n"
+
+#: src/doodle/getopt.c:674
+#, c-format
+msgid "%s: option `%s' is ambiguous\n"
+msgstr "%s: flaggan \"%s\" är tvetydig\n"
+
+#: src/doodle/getopt.c:699
+#, c-format
+msgid "%s: option `--%s' doesn't allow an argument\n"
+msgstr "%s: flaggan \"--%s\" tillåter inte ett argument\n"
+
+#: src/doodle/getopt.c:705
+#, c-format
+msgid "%s: option `%c%s' doesn't allow an argument\n"
+msgstr "%s: flaggan \"%c%s\" tillåter inte ett argument\n"
+
+#: src/doodle/getopt.c:722 src/doodle/getopt.c:893
+#, c-format
+msgid "%s: option `%s' requires an argument\n"
+msgstr "%s: flaggan \"%s\" kräver ett argument\n"
+
+#: src/doodle/getopt.c:751
+#, c-format
+msgid "%s: unrecognized option `--%s'\n"
+msgstr "%s: okänd flagga \"--%s\"\n"
+
+#: src/doodle/getopt.c:755
+#, c-format
+msgid "%s: unrecognized option `%c%s'\n"
+msgstr "%s: okänd flagga \"%c%s\"\n"
+
+#: src/doodle/getopt.c:781
+#, c-format
+msgid "%s: illegal option -- %c\n"
+msgstr "%s: otillåten flagga -- %c\n"
+
+#: src/doodle/getopt.c:783
+#, c-format
+msgid "%s: invalid option -- %c\n"
+msgstr "%s: ogiltig flagga -- %c\n"
+
+#: src/doodle/getopt.c:812 src/doodle/getopt.c:942
+#, c-format
+msgid "%s: option requires an argument -- %c\n"
+msgstr "%s: flagga kräver ett argument -- %c\n"
+
+#: src/doodle/getopt.c:860
+#, c-format
+msgid "%s: option `-W %s' is ambiguous\n"
+msgstr "%s: flaggan \"-W %s\" är tvetydig\n"
+
+#: src/doodle/getopt.c:878
+#, c-format
+msgid "%s: option `-W %s' doesn't allow an argument\n"
+msgstr "%s: flaggan \"-W %s\" tillåter inte ett argument\n"
+
+#: src/doodle/grow.c:41
+#, c-format
+msgid "FATAL: MALLOC called with size 0!\n"
+msgstr "ALLVARLIGT: MALLOC anropad med storlek 0!\n"
+
+#: src/doodle/grow.c:46
+#, c-format
+msgid "FATAL: MALLOC called with size < 0!\n"
+msgstr "ALLVARLIGT: MALLOC anropad med storlek < 0!\n"
+
+#: src/doodle/grow.c:52 src/doodle/grow.c:70
+#, c-format
+msgid "FATAL: %s\n"
+msgstr "ALLVARLIGT: %s\n"
+
+#: src/doodle/grow.c:64
+#, c-format
+msgid "FATAL: STRDUP called with str NULL!\n"
+msgstr "ALLVARLIGT: STRDUP anropad med str NULL!\n"
+
+#: src/doodle/grow.c:100
+#, c-format
+msgid "FATAL: can not allocate %u * %d elements (number too large) at %s:%d.\n"
+msgstr ""
+"ALLVARLIGT: kan inte allokera %u * %d element (antal för stort) vid %s:%d.\n"
+
+#: src/doodle/help.c:51
+#, c-format
+msgid ""
+"Usage: %s\n"
+"%s\n"
+"\n"
+msgstr ""
+"Användning: %s\n"
+"%s\n"
+"\n"
+
+#: src/doodle/help.c:54
+#, c-format
+msgid ""
+"Arguments mandatory for long options are also mandatory for short options.\n"
+msgstr ""
+"Argument som är obligatoriska för långa flaggor är också obligatoriska för "
+"korta flaggor.\n"
+
+#: src/doodle/index.c:196
+msgid "Loading default set of libextractor plugins.\n"
+msgstr "Läser in förvald uppsättning av libextractor-instick.\n"
+
+#: src/doodle/index.c:200
+#, c-format
+msgid "Loading libextractor plugins: '%s'\n"
+msgstr "Läser in libextractor-instick: \"%s\"\n"
+
+#: src/doodle/tree.c:194
+#, c-format
+msgid "Short read at offset %llu (attempted to read %llu bytes).\n"
+msgstr "Kort läsning vid offset %llu (försökte läsa %llu byte).\n"
+
+#: src/doodle/tree.c:212
+#, c-format
+msgid "'%s' failed: %s\n"
+msgstr "\"%s\" misslyckades: %s\n"
+
+#: src/doodle/tree.c:226
+#, c-format
+msgid "Short write at offset %llu (wanted to write %llu bytes).\n"
+msgstr "Kort skrivning vid offset %llu (försökte skriva %llu byte).\n"
+
+#: src/doodle/tree.c:415 src/doodle/tree.c:437 src/doodle/tree.c:473
+#: src/doodle/tree.c:502 src/doodle/tree.c:664 src/doodle/tree.c:1119
+#: src/doodle/tree.c:1160 src/doodle/tree.c:1181 src/doodle/tree.c:1200
+#: src/doodle/tree.c:1213 src/doodle/tree.c:1235 src/doodle/tree.c:1242
+#: src/doodle/tree.c:1256
+#, c-format
+msgid ""
+"Assertion failed at %s:%d.\n"
+"Database format error!\n"
+msgstr ""
+"Påstående misslyckades vid %s.%d.\n"
+"Formatfel i databas!\n"
+
+# Bättre ord för "serialiserar"
+#: src/doodle/tree.c:1046
+#, c-format
+msgid "Memory limit (%u bytes) hit, serializing some data.\n"
+msgstr "Minnesgräns (%u byte) nådd, serialiserar viss data.\n"
+
+#: src/doodle/tree.c:1084
+#, c-format
+msgid "Reduced memory consumption for suffix tree to %u bytes.\n"
+msgstr "Minskade minneskonsumption för suffixträd till %u byte.\n"
+
+#: src/doodle/tree.c:1394
+#, c-format
+msgid "Assertion failed at %s:%d: %llu > %llu or %llu > %llu.\n"
+msgstr "Påstående misslyckades vid %s.%d: %llu > %llu eller %llu > %llu.\n"
+
+#: src/doodle/tree.c:1514
+#, c-format
+msgid "Assertion failed at %s:%d: %llu > %llu.\n"
+msgstr "Påstående misslyckades vid %s:%d: %llu > %llu.\n"
+
+#: src/doodle/tree.c:1592
+#, c-format
+msgid "Could not open '%s': %s\n"
+msgstr "Kunde inte öppna \"%s\": %s\n"
+
+#: src/doodle/tree.c:1602 src/doodle/tree.c:1811
+#, c-format
+msgid "Could not lock database '%s': %s\n"
+msgstr "Kunde inte låsa databasen \"%s\": %s\n"
+
+#: src/doodle/tree.c:1627
+#, c-format
+msgid ""
+"Database file '%s' is from incomplete database build.  I will remove it and "
+"rebuild the database.\n"
+msgstr ""
+"Databasfilen \"%s\" är från ett okomplett databasbygge.  Jag kommer att ta "
+"bort den och bygga om databasen igen.\n"
+
+#: src/doodle/tree.c:1633
+#, c-format
+msgid "Could not unlink '%s': %s\n"
+msgstr "Kunde inte avlänka \"%s\": %s\n"
+
+#: src/doodle/tree.c:1641
+#, c-format
+msgid "Database file '%s' has wrong magic code.\n"
+msgstr "Databasfilen \"%s\" har felaktig magisk kod.\n"
+
+#: src/doodle/tree.c:1708
+#, c-format
+msgid "Error reading database '%s' at %s.%d.\n"
+msgstr "Fel vid läsning av databasen \"%s\" vid %s.%d.\n"
+
+#: src/doodle/tree.c:1784
+#, c-format
+msgid "Database '%s' does not exist.\n"
+msgstr "Databasen \"%s\" finns inte.\n"
+
+#: src/doodle/tree.c:1802
+#, c-format
+msgid "Error creating database '%s' at %s:%d: %s\n"
+msgstr "Fel vid skapandet av databasen \"%s\" vid %s:%d: %s\n"
+
+#: src/doodle/tree.c:1928
+#, c-format
+msgid "Could not open temporary file '%s': %s\n"
+msgstr "Kunde inte öppna temporärfilen \"%s\": %s\n"
+
+#: src/doodle/tree.c:1942
+#, c-format
+msgid "Writing doodle database to temporary file '%s'.\n"
+msgstr "Skriver doodle-databas till temporärfilen \"%s\".\n"
+
+#: src/doodle/tree.c:2018
+#, c-format
+msgid "Could not remove old database '%s': %s\n"
+msgstr "Kunde inte ta bort gamla databasen \"%s\": %s\n"
+
+#: src/doodle/tree.c:2025
+#, c-format
+msgid "Could not rename temporary file '%s' to '%s: %s\n"
+msgstr "Kunde inte byta namn på temporärfilen \"%s\" till \"%s\": %s\n"
+
+#: src/doodle/tree.c:2080 src/doodle/tree.c:2138 src/doodle/tree.c:2220
+#: src/doodle/tree.c:2234 src/doodle/tree.c:2519 src/doodle/tree.c:2533
+#: src/doodle/tree.c:2545 src/doodle/tree.c:2583 src/doodle/tree.c:2628
+#: src/doodle/tree.c:2641 src/doodle/tree.c:2686 src/doodle/tree.c:2701
+#: src/doodle/tree.c:2714 src/doodle/tree.c:2736 src/doodle/tree.c:3191
+#, c-format
+msgid "Assertion failed at %s:%d!\n"
+msgstr "Påstående misslyckades vid %s:%d!\n"
+
+#: src/doodle/tree.c:2292
+#, c-format
+msgid "Adding keyword '%s' for file '%s'.\n"
+msgstr "Lägger till nyckelordet \"%s\" för filen \"%s\".\n"
+
+#: src/doodle/tree.c:2916
+#, c-format
+msgid "Removing the keywords for file '%s'.\n"
+msgstr "Tar bort nyckelorden för filen \"%s\".\n"
+
+#: src/doodle/tree.c:2984 src/doodle/tree.c:3045
+msgid ""
+"Scanning filesystem in order to remove obsolete entries from existing "
+"database.\n"
+msgstr ""
+"Söker av filsystem för att ta bort föråldrade poster från befintlig "
+"databas.\n"
+
+#: src/doodle/tree.c:3003 src/doodle/tree.c:3064
+#, c-format
+msgid "File '%s' could not be accessed: %s. Removing file from index.\n"
+msgstr "Filen \"%s\" kunde inte kommas åt: %s. Tar bort fil från index.\n"
+
+#: src/doodle/tree.c:3010 src/doodle/tree.c:3071
+#, c-format
+msgid "File '%s' is not a regular file. Removing file from index.\n"
+msgstr "Filen \"%s\" är inte en vanlig fil. Tar bort fil från index.\n"
+
+#~ msgid ""
+#~ "use the generic plaintext extractor for the language with the 2-letter "
+#~ "language code LANG (use when building database)"
+#~ msgstr ""
+#~ "använd den allmänna klartextextraheraren för språket med 2-bokstavskoden "
+#~ "i LANG (använd vid bygge av databas)"
+
+#~ msgid "compute hash using the given ALGORITHM (currently sha1 or md5)"
+#~ msgstr "beräkna hash med angiven ALGORITHM (för närvarande sha1 eller md5)"
+
+#~ msgid ""
+#~ "use the generic plaintext extractor for the language with the 2-letter "
+#~ "language code LANG"
+#~ msgstr ""
+#~ "använd den allmänna klartextextraheraren för språket med 2-bokstavskoden "
+#~ "i LANG"
+
+#~ msgid "compute hash using the given ALGORITHM"
+#~ msgstr "beräkna hash med angiven ALGORITHM"
+
+#~ msgid "Failed to load any libextractor plugins. Aborting.\n"
+#~ msgstr "Misslyckades att läsa in något libextractor-instick. Avbryter.\n"

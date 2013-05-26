@@ -1,0 +1,27 @@
+This file lists the known problems with doodle on various platforms.
+
+Let us know if you know more about it then we do. 
+
+Linux (x86):
+- perfect
+
+FreeBSD:
+- unknown 
+
+OpenBSD/NetBSD:
+- may work
+
+Linux (non x86):
+- unknown
+
+Solaris 8:
+- unknown
+
+OS X (see www.darwinports.org):
+- fam does not exist, so no doodled
+
+Cygwin (x86):
+- unknown
+
+MinGW (x86):
+- unknown

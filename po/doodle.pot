@@ -1,0 +1,553 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Christian Grothoff
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: https://gnunet.org/mantis/ or christian@grothoff.org\n"
+"POT-Creation-Date: 2010-01-14 11:52+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/doodle/doodle.c:67
+msgid "consider strings to match if DISTANCE letters are different"
+msgstr ""
+
+#: src/doodle/doodle.c:69
+msgid "build database (default is to search)"
+msgstr ""
+
+#: src/doodle/doodle.c:71 src/doodle/doodled.c:61
+msgid "use location FILENAME to store doodle database"
+msgstr ""
+
+#: src/doodle/doodle.c:73
+msgid "for each matching file, print the extracted keywords"
+msgstr ""
+
+#: src/doodle/doodle.c:75
+msgid "add the filename to the list of keywords (use when building database)"
+msgstr ""
+
+#: src/doodle/doodle.c:77 src/doodle/doodled.c:67
+msgid "print this help page"
+msgstr ""
+
+#: src/doodle/doodle.c:79
+msgid "be case-insensitive (use when searching)"
+msgstr ""
+
+#: src/doodle/doodle.c:81 src/doodle/doodled.c:69
+msgid "load an extractor plugin named LIBRARY"
+msgstr ""
+
+#: src/doodle/doodle.c:83
+msgid "log keywords to a file named FILENAME"
+msgstr ""
+
+#: src/doodle/doodle.c:85 src/doodle/doodled.c:73
+msgid "do not load default set of extractor plugins"
+msgstr ""
+
+#: src/doodle/doodle.c:87 src/doodle/doodled.c:75
+msgid "set the memory limit to SIZE MB (for the tree)."
+msgstr ""
+
+#: src/doodle/doodle.c:89
+msgid "print suffix tree (for debugging)"
+msgstr ""
+
+#: src/doodle/doodle.c:91 src/doodle/doodled.c:77
+msgid "exclude given paths from building or searching"
+msgstr ""
+
+#: src/doodle/doodle.c:93 src/doodle/doodled.c:79
+msgid "print the version number"
+msgstr ""
+
+#: src/doodle/doodle.c:95 src/doodle/doodled.c:81
+msgid "be verbose"
+msgstr ""
+
+#: src/doodle/doodle.c:98
+msgid "doodle [OPTIONS] ([FILENAMES]*|[KEYWORDS]*)"
+msgstr ""
+
+#: src/doodle/doodle.c:99
+msgid "Index and search meta-data of files."
+msgstr ""
+
+#: src/doodle/doodle.c:144
+#, c-format
+msgid "Pruned: %s\n"
+msgstr ""
+
+#: src/doodle/doodle.c:187 src/doodle/doodled.c:328 src/doodle/doodled.c:345
+#: src/doodle/doodled.c:391 src/doodle/files.c:79 src/doodle/tree.c:2283
+#, c-format
+msgid "Call to '%s' for file '%s' failed: %s\n"
+msgstr ""
+
+#: src/doodle/doodle.c:195
+#, c-format
+msgid "Processing '%s'\n"
+msgstr ""
+
+#: src/doodle/doodle.c:218 src/doodle/doodled.c:596
+#, c-format
+msgid "No database specified.  Aborting.\n"
+msgstr ""
+
+#: src/doodle/doodle.c:223 src/doodle/doodled.c:603
+#, c-format
+msgid ""
+"'%s' is an invalid database filename (has a colon) for building database "
+"(option '%s').\n"
+msgstr ""
+
+#: src/doodle/doodle.c:255 src/doodle/doodled.c:585
+#, c-format
+msgid "Could not open '%s' for logging: %s.\n"
+msgstr ""
+
+#: src/doodle/doodle.c:265 src/doodle/doodled.c:478
+#, c-format
+msgid "Indexing '%s'\n"
+msgstr ""
+
+#: src/doodle/doodle.c:322
+#, c-format
+msgid "Keywords for matching file '%s':\n"
+msgstr ""
+
+#: src/doodle/doodle.c:343 src/doodle/doodle.c:382
+#, c-format
+msgid "No database specified. Aborting.\n"
+msgstr ""
+
+#: src/doodle/doodle.c:348 src/doodle/doodle.c:387
+#, c-format
+msgid "Call to '%s' for file '%s' failed: %s.\n"
+msgstr ""
+
+#: src/doodle/doodle.c:423
+#, c-format
+msgid "Searching for '%s':\n"
+msgstr ""
+
+#: src/doodle/doodle.c:426
+#, c-format
+msgid ""
+"Warning: search string is longer than %d characters, search will not work.\n"
+msgstr ""
+
+#: src/doodle/doodle.c:431
+#, c-format
+msgid ""
+"Warning: search string is longer than %d characters, search may not work "
+"properly.\n"
+msgstr ""
+
+#: src/doodle/doodle.c:443 src/doodle/doodle.c:453
+#, c-format
+msgid "\tNot found!\n"
+msgstr ""
+
+#: src/doodle/doodle.c:523 src/doodle/doodle.c:579 src/doodle/doodled.c:852
+#, c-format
+msgid "You must pass a number to the '%s' option.\n"
+msgstr ""
+
+#: src/doodle/doodle.c:528 src/doodle/doodle.c:536 src/doodle/doodle.c:541
+#: src/doodle/doodle.c:546 src/doodle/doodle.c:566 src/doodle/doodle.c:595
+#, c-format
+msgid "The options '%s' and '%s' cannot be used together!\n"
+msgstr ""
+
+#: src/doodle/doodle.c:584 src/doodle/doodled.c:857
+#, c-format
+msgid "Specified memory limit is too high.\n"
+msgstr ""
+
+#: src/doodle/doodle.c:609 src/doodle/doodled.c:874
+#, c-format
+msgid "Version %s\n"
+msgstr ""
+
+#: src/doodle/doodle.c:614 src/doodle/doodled.c:879
+#, c-format
+msgid "Use '--help' to get a list of options.\n"
+msgstr ""
+
+#: src/doodle/doodle.c:623
+#, c-format
+msgid "Invoke with filenames or directories to index!\n"
+msgstr ""
+
+#: src/doodle/doodle.c:624
+#, c-format
+msgid "Invoke with query terms to search for!\n"
+msgstr ""
+
+#: src/doodle/doodled.c:63
+msgid "run in debug mode, do not daemonize"
+msgstr ""
+
+#: src/doodle/doodled.c:65
+msgid "add the filename to the list of keywords"
+msgstr ""
+
+#: src/doodle/doodled.c:71
+msgid "log activity to a file named FILENAME"
+msgstr ""
+
+#: src/doodle/doodled.c:84
+msgid "doodled [OPTIONS] [FILENAMES]"
+msgstr ""
+
+#: src/doodle/doodled.c:85
+msgid "Continuously index files in the background."
+msgstr ""
+
+#: src/doodle/doodled.c:186
+msgid "Event processing thread created.\n"
+msgstr ""
+
+#: src/doodle/doodled.c:201 src/doodle/doodled.c:220 src/doodle/index.c:176
+#: src/doodle/index.c:184 src/doodle/index.c:207 src/doodle/tree.c:181
+#: src/doodle/tree.c:189 src/doodle/tree.c:220 src/doodle/tree.c:241
+#, c-format
+msgid "Call to '%s' failed: %s\n"
+msgstr ""
+
+#: src/doodle/doodled.c:379
+#, c-format
+msgid "Will monitor directory '%s' for changes.\n"
+msgstr ""
+
+#: src/doodle/doodled.c:426
+#, c-format
+msgid "Processing file '%s'.\n"
+msgstr ""
+
+#: src/doodle/doodled.c:454
+msgid "Main worker thread created.\n"
+msgstr ""
+
+#: src/doodle/doodled.c:465
+msgid "Failed to spawn event processing thread.\n"
+msgstr ""
+
+#: src/doodle/doodled.c:472
+msgid "Registering with FAM for file system events.\n"
+msgstr ""
+
+#: src/doodle/doodled.c:495
+msgid "doodled startup complete.  Now waiting for FAM events.\n"
+msgstr ""
+
+#: src/doodle/doodled.c:545
+msgid "Error disconnecting from fam.\n"
+msgstr ""
+
+#: src/doodle/doodled.c:633
+msgid "Failed to connect to fam.  Aborting.\n"
+msgstr ""
+
+#: src/doodle/doodled.c:658
+#, c-format
+msgid "Failed to create worker thread: %s"
+msgstr ""
+
+#: src/doodle/doodled.c:671
+msgid "doodled is shutting down.\n"
+msgstr ""
+
+#: src/doodle/doodled.c:675
+msgid "No files exist that doodled would monitor for changes.  Exiting.\n"
+msgstr ""
+
+#: src/doodle/doodled.c:683
+#, c-format
+msgid "Cancelling fam monitor '%s'.\n"
+msgstr ""
+
+#: src/doodle/doodled.c:704
+msgid "Unloading libextractor plugins.\n"
+msgstr ""
+
+#: src/doodle/doodled.c:886
+#, c-format
+msgid "Invoke with filenames or directories to monitor!\n"
+msgstr ""
+
+#: src/doodle/files.c:71 src/doodle/tree.c:328 src/doodle/tree.c:710
+#: src/doodle/tree.c:1077 src/doodle/tree.c:1384 src/doodle/tree.c:1400
+#: src/doodle/tree.c:1436 src/doodle/tree.c:1451 src/doodle/tree.c:1471
+#: src/doodle/tree.c:2356 src/doodle/tree.c:2385
+#, c-format
+msgid "Assertion failed at %s:%d.\n"
+msgstr ""
+
+#: src/doodle/files.c:107
+#, c-format
+msgid "Scanning '%s'\n"
+msgstr ""
+
+#: src/doodle/files.c:115
+#, c-format
+msgid "Access to directory '%s' was denied.\n"
+msgstr ""
+
+#: src/doodle/getopt.c:674
+#, c-format
+msgid "%s: option `%s' is ambiguous\n"
+msgstr ""
+
+#: src/doodle/getopt.c:699
+#, c-format
+msgid "%s: option `--%s' doesn't allow an argument\n"
+msgstr ""
+
+#: src/doodle/getopt.c:705
+#, c-format
+msgid "%s: option `%c%s' doesn't allow an argument\n"
+msgstr ""
+
+#: src/doodle/getopt.c:722 src/doodle/getopt.c:893
+#, c-format
+msgid "%s: option `%s' requires an argument\n"
+msgstr ""
+
+#: src/doodle/getopt.c:751
+#, c-format
+msgid "%s: unrecognized option `--%s'\n"
+msgstr ""
+
+#: src/doodle/getopt.c:755
+#, c-format
+msgid "%s: unrecognized option `%c%s'\n"
+msgstr ""
+
+#: src/doodle/getopt.c:781
+#, c-format
+msgid "%s: illegal option -- %c\n"
+msgstr ""
+
+#: src/doodle/getopt.c:783
+#, c-format
+msgid "%s: invalid option -- %c\n"
+msgstr ""
+
+#: src/doodle/getopt.c:812 src/doodle/getopt.c:942
+#, c-format
+msgid "%s: option requires an argument -- %c\n"
+msgstr ""
+
+#: src/doodle/getopt.c:860
+#, c-format
+msgid "%s: option `-W %s' is ambiguous\n"
+msgstr ""
+
+#: src/doodle/getopt.c:878
+#, c-format
+msgid "%s: option `-W %s' doesn't allow an argument\n"
+msgstr ""
+
+#: src/doodle/grow.c:41
+#, c-format
+msgid "FATAL: MALLOC called with size 0!\n"
+msgstr ""
+
+#: src/doodle/grow.c:46
+#, c-format
+msgid "FATAL: MALLOC called with size < 0!\n"
+msgstr ""
+
+#: src/doodle/grow.c:52 src/doodle/grow.c:70
+#, c-format
+msgid "FATAL: %s\n"
+msgstr ""
+
+#: src/doodle/grow.c:64
+#, c-format
+msgid "FATAL: STRDUP called with str NULL!\n"
+msgstr ""
+
+#: src/doodle/grow.c:100
+#, c-format
+msgid "FATAL: can not allocate %u * %d elements (number too large) at %s:%d.\n"
+msgstr ""
+
+#: src/doodle/help.c:51
+#, c-format
+msgid ""
+"Usage: %s\n"
+"%s\n"
+"\n"
+msgstr ""
+
+#: src/doodle/help.c:54
+#, c-format
+msgid ""
+"Arguments mandatory for long options are also mandatory for short options.\n"
+msgstr ""
+
+#: src/doodle/index.c:196
+msgid "Loading default set of libextractor plugins.\n"
+msgstr ""
+
+#: src/doodle/index.c:200
+#, c-format
+msgid "Loading libextractor plugins: '%s'\n"
+msgstr ""
+
+#: src/doodle/tree.c:194
+#, c-format
+msgid "Short read at offset %llu (attempted to read %llu bytes).\n"
+msgstr ""
+
+#: src/doodle/tree.c:212
+#, c-format
+msgid "'%s' failed: %s\n"
+msgstr ""
+
+#: src/doodle/tree.c:226
+#, c-format
+msgid "Short write at offset %llu (wanted to write %llu bytes).\n"
+msgstr ""
+
+#: src/doodle/tree.c:415 src/doodle/tree.c:437 src/doodle/tree.c:473
+#: src/doodle/tree.c:502 src/doodle/tree.c:664 src/doodle/tree.c:1119
+#: src/doodle/tree.c:1160 src/doodle/tree.c:1181 src/doodle/tree.c:1200
+#: src/doodle/tree.c:1213 src/doodle/tree.c:1235 src/doodle/tree.c:1242
+#: src/doodle/tree.c:1256
+#, c-format
+msgid ""
+"Assertion failed at %s:%d.\n"
+"Database format error!\n"
+msgstr ""
+
+#: src/doodle/tree.c:1046
+#, c-format
+msgid "Memory limit (%u bytes) hit, serializing some data.\n"
+msgstr ""
+
+#: src/doodle/tree.c:1084
+#, c-format
+msgid "Reduced memory consumption for suffix tree to %u bytes.\n"
+msgstr ""
+
+#: src/doodle/tree.c:1394
+#, c-format
+msgid "Assertion failed at %s:%d: %llu > %llu or %llu > %llu.\n"
+msgstr ""
+
+#: src/doodle/tree.c:1514
+#, c-format
+msgid "Assertion failed at %s:%d: %llu > %llu.\n"
+msgstr ""
+
+#: src/doodle/tree.c:1592
+#, c-format
+msgid "Could not open '%s': %s\n"
+msgstr ""
+
+#: src/doodle/tree.c:1602 src/doodle/tree.c:1811
+#, c-format
+msgid "Could not lock database '%s': %s\n"
+msgstr ""
+
+#: src/doodle/tree.c:1627
+#, c-format
+msgid ""
+"Database file '%s' is from incomplete database build.  I will remove it and "
+"rebuild the database.\n"
+msgstr ""
+
+#: src/doodle/tree.c:1633
+#, c-format
+msgid "Could not unlink '%s': %s\n"
+msgstr ""
+
+#: src/doodle/tree.c:1641
+#, c-format
+msgid "Database file '%s' has wrong magic code.\n"
+msgstr ""
+
+#: src/doodle/tree.c:1708
+#, c-format
+msgid "Error reading database '%s' at %s.%d.\n"
+msgstr ""
+
+#: src/doodle/tree.c:1784
+#, c-format
+msgid "Database '%s' does not exist.\n"
+msgstr ""
+
+#: src/doodle/tree.c:1802
+#, c-format
+msgid "Error creating database '%s' at %s:%d: %s\n"
+msgstr ""
+
+#: src/doodle/tree.c:1928
+#, c-format
+msgid "Could not open temporary file '%s': %s\n"
+msgstr ""
+
+#: src/doodle/tree.c:1942
+#, c-format
+msgid "Writing doodle database to temporary file '%s'.\n"
+msgstr ""
+
+#: src/doodle/tree.c:2018
+#, c-format
+msgid "Could not remove old database '%s': %s\n"
+msgstr ""
+
+#: src/doodle/tree.c:2025
+#, c-format
+msgid "Could not rename temporary file '%s' to '%s: %s\n"
+msgstr ""
+
+#: src/doodle/tree.c:2080 src/doodle/tree.c:2138 src/doodle/tree.c:2220
+#: src/doodle/tree.c:2234 src/doodle/tree.c:2519 src/doodle/tree.c:2533
+#: src/doodle/tree.c:2545 src/doodle/tree.c:2583 src/doodle/tree.c:2628
+#: src/doodle/tree.c:2641 src/doodle/tree.c:2686 src/doodle/tree.c:2701
+#: src/doodle/tree.c:2714 src/doodle/tree.c:2736 src/doodle/tree.c:3191
+#, c-format
+msgid "Assertion failed at %s:%d!\n"
+msgstr ""
+
+#: src/doodle/tree.c:2292
+#, c-format
+msgid "Adding keyword '%s' for file '%s'.\n"
+msgstr ""
+
+#: src/doodle/tree.c:2916
+#, c-format
+msgid "Removing the keywords for file '%s'.\n"
+msgstr ""
+
+#: src/doodle/tree.c:2984 src/doodle/tree.c:3045
+msgid ""
+"Scanning filesystem in order to remove obsolete entries from existing "
+"database.\n"
+msgstr ""
+
+#: src/doodle/tree.c:3003 src/doodle/tree.c:3064
+#, c-format
+msgid "File '%s' could not be accessed: %s. Removing file from index.\n"
+msgstr ""
+
+#: src/doodle/tree.c:3010 src/doodle/tree.c:3071
+#, c-format
+msgid "File '%s' is not a regular file. Removing file from index.\n"
+msgstr ""

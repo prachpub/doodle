@@ -1,0 +1,282 @@
+Thu Jan 14 11:53:06 CET 2010
+	Releasing doodle 0.7.0.
+	
+Fri Jan  1 21:07:59 CET 2010
+	Updating implementation for GNU libextractor 0.6.x API.
+
+Mon Apr 28 08:41:16 MDT 2008
+	Updated Dutch translation.
+
+Sun Apr 20 20:52:16 MDT 2008
+	Fixed a problem in the code handling iconv (character
+	set translation) errors; if iconv was not working, the
+	input string should just be returned without conversion
+	(thanks to Alan Post for pointing this out).
+
+Wed Dec 19 11:06:08 MST 2007
+	Updated Vietnamese translation.
+
+Mon Dec 10 17:10:08 MST 2007
+	Updated Swedish translation.
+
+Wed Dec  5 18:26:24 MST 2007
+	Added "missing" include file for pthread_kill.
+	Releasing doodle 0.6.7.
+
+Tue Nov  6 12:01:10 MST 2007
+	Updated Dutch translation.
+
+Mon Feb 12 13:44:03 MST 2007
+	gettext update to 0.16.1.
+
+Tue Jan  2 21:25:13 MST 2007
+	Patching bug on big-endian platforms (thanks to Volker Weiss).
+	This changes the database format (for everybody), so you will
+	need to regenerate your indices.
+	Patching bug in handling of empty metadata (again, thanks to
+	Volker Weiss).
+	Releasing doodle 0.6.6.
+	
+Mon Jan  1 19:10:40 MST 2007
+	Added pkgconfig support.
+
+Tue May  2 14:56:42 PDT 2006
+	doodled shutdown sequence was broken, fixed.
+	doodled used stat instead of lstat, resulting in
+	symbolic links being added and then removed from
+	the database; fixed.  doodled no longer verifies
+	all entries in the database on startup (too costly).
+	We assume that "doodle -b" has been used to create
+	an up-to-date database and that doodled will always
+	run in the background keeping it (sufficiently)
+	up-to-date.
+	Added out-of-process execution of GNU libextractor.
+	This ensures that doodle(d) does not crash even if
+	GNU libextractor does (i.e. due to bugs or corrupted
+	file systems).
+	Releasing doodle 0.6.5.
+
+Sat Jan  7 02:37:53 PST 2006
+	Added Swedish translation.
+
+Sun Sep 18 22:14:17 PDT 2005
+	Actually implemented keyword logging.  Releasing doodle 0.6.4.
+
+Sun Sep 18 16:30:56 PDT 2005
+	Updated Irish translation.
+
+Fri Sep 16 19:06:42 PDT 2005
+	Updated German translation.
+
+Thu Sep 15 21:55:19 PDT 2005
+	Fixing compiler warnings given by gcc 4.0.
+
+Sun Sep  4 17:56:10 PDT 2005
+	Fixed -P option (short form did not work, Mantis #927).
+	Made prune-paths much faster by not iterating over the pruned
+	directories (Mantis #926).
+
+Wed Aug  3 11:01:18 PDT 2005
+	Updated Vietnamese translation.
+
+Thu Jul 28 16:35:50 EST 2005
+	Small changes to support API of libextractor >= 0.5.0.
+	Releasing doodle 0.6.3.
+
+Tue Apr  5 17:11:33 EST 2005
+	Added Vietnamese translation.
+
+Mon Feb  7 11:06:05 EST 2005
+	Added /sys to default prunepath.
+
+Wed Jan 26 03:20:11 EST 2005
+	Added Italian translation.
+
+Wed Jan  5 17:34:06 EST 2005
+	Fixed bug with approximate searches trying to write to the database.
+	Releasing doodle 0.6.2.  (SVN revision is 52).
+	
+Fri Dec 31 20:33:44 EST 2004
+	Updated Irish and German translation.
+
+Mon Dec 27 21:21:35 CET 2004 
+	Do not follow symbolic links (in doodled, doodle was ok already).
+
+Sun Dec 26 01:44:00 CET 2004
+	doodled debugging.  Added multithreading, code cleanup.  Works much
+	better now.  Added conversion of search strings to UTF-8 to support
+	libextractor 0.4.0 and higher.  Releasing doodle 0.6.1.
+
+Sat Nov 13 15:00:03 EST 2004
+	Added locking (flock) to avoid concurrent modification of the doodle
+	DB.  More doodled bugfixes and optimizations.  In particular fine-grained
+	modification tracking (per node) and batched truncation.  This
+	dramatically speeds up updating an existing database after files were
+	removed (O(n) instead of O(n*k) where n is the size of the DB and k
+	is the number of removed files).
+
+Thu Nov 11 21:50:01 EST 2004
+	Various major bugfixes to doodled and also in doodle
+	(with respect to logging).
+
+Fri Oct 22 22:04:32 EST 2004
+	Added doodled, a daemon that watches changes in directories
+	that were indexed by doodle and updates the database whenever
+	files in those directories change.  Highly experimental code.
+	Uses libfam.  Releasing doodle 0.6.0.
+	
+Thu Oct 21 21:55:31 EST 2004
+	Major bugfixes in the new code.  The format was again
+	changed slightly.  Where in 0.5.0 all offsets were relative,
+	this is no longer the case for the special absolute offset "0"
+	which is used for termination. Since "0" is not a valid relative
+	offset (a node may not point to itself) we do not have to encode
+	0 as a relative offset and can just put an absolute 0.  This
+	safes a couple of bytes.  Also we did not check if the same
+	node was listed (by chance) multiple times for the same filename.
+	Again, doing that check costs hardly any time but improves 
+	the database size.  For a small testcase we're now down
+	20% in DB size from 0.5.0 (270458 bytes vs. 223311 bytes).
+
+Wed Oct 20 21:33:34 EST 2004
+	Added multi-link support.  Multi-link support allows
+	much faster scanning of the doodle tree by allocating
+	n-nodes from the same level of the tree in the same
+	block in memory.  This changes the database format
+	slightly; the cost and benefits in terms of size should
+	roughly cancel each other out (on some test I saw an
+	increase of 1.9%).  For searching this should not make 
+	much of a difference; single search invocations
+	should be minimally slower, on the other hand multiple 
+	searches on the same tree in memory should be faster.
+	In general, building the database should be significantly
+	faster (at least as far as doodle is concerned) since in 
+	essence this entails doing lots of searches in-memory.
+	Using the proftree benchmark the time for 100.000 
+	in-memory 2-searches goes down from 150s to 110s on my 
+	machine.
+
+	Did I mention that this feature is highly experimental and
+	the current CVS code is thus far from stable (for example
+	proftree2 still crashes!) If you want something stable, 
+	stick to doodle 0.5.0 for now!
+
+Sat Oct 16 15:32:48 EST 2004
+	Added translation to Albanian.  
+	
+Sat Oct  9 15:31:18 EST 2004
+	Added translation to Dutch.  Releasing 0.5.0.
+
+Tue Oct  5 02:05:02 EST 2004
+	Implemented logreplay.  Fixed some bugs in swaping code,
+	added some more checks.
+
+Mon Oct  4 02:22:22 EST 2004
+	Added support for searching multiple databases 
+	(like with locate).  Added support for pruning
+	paths (option -P).  Updated man-pages and other docs.
+
+Sun Sep 26 17:14:13 EST 2004
+	Added support for 64-bit files (database larger than
+	2^31 bytes).  Made offsets to other nodes relative
+	(reduces DB size since relative offsets are almost
+	always significantly smaller).  This is an incompatible
+	database format change!  Added option to allow user
+	to change the memory limit (8 MB is a bit small for
+	very large databases if plenty of memory is available).
+
+Sun Sep 26 16:04:10 EST 2004
+	Fixing potential segfault when reading corrupted 
+	database.
+
+Tue Sep 14 22:29:53 EST 2004
+	Bounding search-string size to avoid quadratic
+	complexity for very long meta-data strings.
+	
+Thu Sep  9 00:29:37 EST 2004
+	Fixed bugs, fixed I18N to make it work properly if
+	libdoodle is used in applications other than doodle.
+	Releasing 0.4.0.
+
+Sat Sep  4 18:38:06 IST 2004
+	Changed API (needed to make memory consumption bound
+	truely work).  New API should also be more intuitive
+	and results in less code.  The Java API did not change.  
+	Improved IO by making reads aligned to blocks.  
+	Improved copying on expansion to avoid quadratic 
+	complexity (in the number of search-strings).  Added 
+	benchmark for profiling.
+
+Fri Sep  3 00:50:00 IST 2004
+	Added code to reduce memory consumption (by using
+	a temporary file and serializing part of the index
+	to that file if we cross a certain memory threshold).
+	Also reduced memory consumption on 64-bit machines
+	by replacing pointers with 32-bit integers.  This also
+	improves CPU usage by avoiding sorting and binary
+	searches.  Reduced IO (mostly for search) by keeping 
+	certain additional values in memory (feasible now 
+	thanks to the memory threshold code).
+
+Sat Aug 21 22:52:22 IST 2004
+	Added Basque translation (incomplete).
+
+Fri Aug 13 21:00:06 IST 2004
+	JNI/Java interface to libdoodle works.  Improved
+	error messages and provided complete translation to
+	German.  Additional testcases.  Updated and improved
+	man-pages.  Releasing 0.3.0.
+
+Thu Aug 12 20:01:59 IST 2004
+	gettextization of the package (with gettext 0.14)
+
+Thu Aug 12 19:47:57 IST 2004
+	Fixing problem with approximate searches (-i and -a options).
+	
+Fri Jul 23 20:05:20 IST 2004
+	Added -B option.  Added man-page for libdoodle.
+	Releasing 0.2.1.
+
+Fri Jul 23 19:11:40 IST 2004
+	Split doodle into library (libdoodle) and main binary.
+	Logging now done via logger method.  Lots of code
+	refactoring and renaming to make library split nicer.
+
+Fri Jul  2 19:51:15 IST 2004
+	Removed SHA-1 (now using timestamps instead) resulting
+	in slighly smaller databases and significantly increased
+	indexing performance.  Database format changed.
+	Releasing 0.2.0.
+
+Fri Jul  2 18:48:20 IST 2004
+	Added code to avoid printing filenames multiple times
+	if multiple keywords match.  Made option -e work when
+	building database.  Added option -f for (full) filenames
+	as keywords.  Added testcases for io and tree module.
+
+Sun Jun 20 14:34:28 IST 2004
+	Fixed segfault.  Added sorting of filenames array
+	and cix to speed up database serialization (improves
+	speed by a factor of 60).  Checking for special devices
+	(char, blk, fifo, sock) added.  Releasing 0.1.1.
+	
+Fri Jun 11 19:27:11 IST 2004
+	Reduced IO overhead (using buffers).  Reduced space
+	consumption even further (integer-pair packing, do not
+	canonicalize tree more than required, limit split to
+	minimum split required).  Fixed various bugs.  Releasing 0.1.0.
+
+Sun Jun  6 19:29:37 IST 2004
+	Reduced space consumption (to 57%), added incrementality.
+	
+Mon May 31 15:36:33 EST 2004
+	Re-worked suffix-tree code.  Multiple results and serialization
+	now work fine.
+	
+Mon May 24 19:56:01 EST 2004
+	Code prints first result (but only first hit at the moment).
+
+Mon May 24 01:00:51 EST 2004
+	Project started.
+
+

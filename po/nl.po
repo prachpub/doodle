@@ -1,0 +1,603 @@
+# Dutch translations for doodle.
+# Copyright (C) 2007 Christian Grothoff (msgids)
+# This file is distributed under the same license as the doodle package.
+#
+# Elros Cyriatan <cyriatan@fastmail.fm>, 2004.
+# Benno Schulenberg <benno@vertaalt.nl>, 2007, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: doodle-0.6.7\n"
+"Report-Msgid-Bugs-To: https://gnunet.org/mantis/ or christian@grothoff.org\n"
+"POT-Creation-Date: 2010-01-14 11:52+0100\n"
+"PO-Revision-Date: 2008-04-28 14:45+0100\n"
+"Last-Translator: Benno Schulenberg <benno@vertaalt.nl>\n"
+"Language-Team: Dutch <vertaling@vrijschrift.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: src/doodle/doodle.c:67
+msgid "consider strings to match if DISTANCE letters are different"
+msgstr "tekenreeksen als overeenkomend zien als dit aantal letters verschilt"
+
+#: src/doodle/doodle.c:69
+msgid "build database (default is to search)"
+msgstr "gegevensbank aanmaken (standaard is zoeken)"
+
+#: src/doodle/doodle.c:71 src/doodle/doodled.c:61
+msgid "use location FILENAME to store doodle database"
+msgstr "de doodle-gegevensbank opslaan in dit bestand"
+
+#: src/doodle/doodle.c:73
+msgid "for each matching file, print the extracted keywords"
+msgstr "voor elk overeenkomend bestand de onttrokken sleutelwoorden tonen"
+
+#: src/doodle/doodle.c:75
+msgid "add the filename to the list of keywords (use when building database)"
+msgstr ""
+"de bestandsnaam toevoegen aan de lijst van sleutelwoorden -- bij aanmaken "
+"van gegevensbank"
+
+#: src/doodle/doodle.c:77 src/doodle/doodled.c:67
+msgid "print this help page"
+msgstr "deze hulptekst tonen"
+
+#: src/doodle/doodle.c:79
+msgid "be case-insensitive (use when searching)"
+msgstr "verschil tussen hoofd- en kleine letters negeren -- bij zoeken"
+
+#: src/doodle/doodle.c:81 src/doodle/doodled.c:69
+msgid "load an extractor plugin named LIBRARY"
+msgstr "deze extractor-plugin laden"
+
+#: src/doodle/doodle.c:83
+msgid "log keywords to a file named FILENAME"
+msgstr "sleutelwoorden opslaan in dit bestand"
+
+#: src/doodle/doodle.c:85 src/doodle/doodled.c:73
+msgid "do not load default set of extractor plugins"
+msgstr "niet de standaardset extractor-plugins laden"
+
+#: src/doodle/doodle.c:87 src/doodle/doodled.c:75
+msgid "set the memory limit to SIZE MB (for the tree)."
+msgstr "de geheugenlimiet (voor de boom) op dit aantal MB instellen"
+
+#: src/doodle/doodle.c:89
+msgid "print suffix tree (for debugging)"
+msgstr "achtervoegselsboom weergeven (voor debuggen)"
+
+#: src/doodle/doodle.c:91 src/doodle/doodled.c:77
+msgid "exclude given paths from building or searching"
+msgstr "deze paden uitsluiten voor opbouwen en doorzoeken"
+
+#: src/doodle/doodle.c:93 src/doodle/doodled.c:79
+msgid "print the version number"
+msgstr "versienummer tonen"
+
+#: src/doodle/doodle.c:95 src/doodle/doodled.c:81
+msgid "be verbose"
+msgstr "breedsprakig zijn"
+
+#: src/doodle/doodle.c:98
+msgid "doodle [OPTIONS] ([FILENAMES]*|[KEYWORDS]*)"
+msgstr "doodle [OPTIES] ([BESTANDSNAMEN]*|[SLEUTELWOORDEN]*)"
+
+#: src/doodle/doodle.c:99
+msgid "Index and search meta-data of files."
+msgstr "De metagegevens van bestanden indexeren en doorzoeken."
+
+#: src/doodle/doodle.c:144
+#, c-format
+msgid "Pruned: %s\n"
+msgstr "Uitgesloten: %s\n"
+
+#: src/doodle/doodle.c:187 src/doodle/doodled.c:328 src/doodle/doodled.c:345
+#: src/doodle/doodled.c:391 src/doodle/files.c:79 src/doodle/tree.c:2283
+#, c-format
+msgid "Call to '%s' for file '%s' failed: %s\n"
+msgstr "Aanroep van '%s' voor bestand '%s' is mislukt: %s\n"
+
+#: src/doodle/doodle.c:195
+#, c-format
+msgid "Processing '%s'\n"
+msgstr "Verwerken van '%s'\n"
+
+#: src/doodle/doodle.c:218 src/doodle/doodled.c:596
+#, c-format
+msgid "No database specified.  Aborting.\n"
+msgstr "Geen gegevensbank opgegeven -- gestopt\n"
+
+#: src/doodle/doodle.c:223 src/doodle/doodled.c:603
+#, c-format
+msgid ""
+"'%s' is an invalid database filename (has a colon) for building database "
+"(option '%s').\n"
+msgstr ""
+"'%s' is een ongeldige bestandsnaam voor een gegevensbank (het bevat een "
+"dubbele punt) bij optie '%s'\n"
+
+#: src/doodle/doodle.c:255 src/doodle/doodled.c:585
+#, c-format
+msgid "Could not open '%s' for logging: %s.\n"
+msgstr "Kan logbestand '%s' niet openen: %s\n"
+
+#: src/doodle/doodle.c:265 src/doodle/doodled.c:478
+#, c-format
+msgid "Indexing '%s'\n"
+msgstr "Indexeren van '%s'\n"
+
+#: src/doodle/doodle.c:322
+#, c-format
+msgid "Keywords for matching file '%s':\n"
+msgstr "Sleutelwoorden voor overeenkomend bestand '%s':\n"
+
+#: src/doodle/doodle.c:343 src/doodle/doodle.c:382
+#, c-format
+msgid "No database specified. Aborting.\n"
+msgstr "Geen gegevensbank opgegeven -- gestopt\n"
+
+#: src/doodle/doodle.c:348 src/doodle/doodle.c:387
+#, c-format
+msgid "Call to '%s' for file '%s' failed: %s.\n"
+msgstr "Aanroep van '%s' voor bestand '%s' is mislukt: %s\n"
+
+#: src/doodle/doodle.c:423
+#, c-format
+msgid "Searching for '%s':\n"
+msgstr "Zoeken naar '%s':\n"
+
+#: src/doodle/doodle.c:426
+#, c-format
+msgid ""
+"Warning: search string is longer than %d characters, search will not work.\n"
+msgstr ""
+"Waarschuwing: de zoektekst is langer dan %d tekens;\n"
+"het zoeken zal niet werken.\n"
+
+#: src/doodle/doodle.c:431
+#, c-format
+msgid ""
+"Warning: search string is longer than %d characters, search may not work "
+"properly.\n"
+msgstr ""
+"Waarschuwing: de zoektekst is langer dan %d tekens;\n"
+"het zoeken zal misschien niet goed werken.\n"
+
+#: src/doodle/doodle.c:443 src/doodle/doodle.c:453
+#, c-format
+msgid "\tNot found!\n"
+msgstr "\tNiet gevonden!\n"
+
+#: src/doodle/doodle.c:523 src/doodle/doodle.c:579 src/doodle/doodled.c:852
+#, c-format
+msgid "You must pass a number to the '%s' option.\n"
+msgstr "Optie '%s' vereist een getal.\n"
+
+#: src/doodle/doodle.c:528 src/doodle/doodle.c:536 src/doodle/doodle.c:541
+#: src/doodle/doodle.c:546 src/doodle/doodle.c:566 src/doodle/doodle.c:595
+#, c-format
+msgid "The options '%s' and '%s' cannot be used together!\n"
+msgstr "Opties '%s' en '%s' gaan niet samen.\n"
+
+#: src/doodle/doodle.c:584 src/doodle/doodled.c:857
+#, c-format
+msgid "Specified memory limit is too high.\n"
+msgstr "De opgegeven geheugenlimiet is te hoog.\n"
+
+#: src/doodle/doodle.c:609 src/doodle/doodled.c:874
+#, c-format
+msgid "Version %s\n"
+msgstr "Versie %s\n"
+
+#: src/doodle/doodle.c:614 src/doodle/doodled.c:879
+#, c-format
+msgid "Use '--help' to get a list of options.\n"
+msgstr "Gebruik '--help' voor een lijst met opties.\n"
+
+#: src/doodle/doodle.c:623
+#, c-format
+msgid "Invoke with filenames or directories to index!\n"
+msgstr "Geef bestandsnamen of mappen op die geïndexeerd moeten worden.\n"
+
+#: src/doodle/doodle.c:624
+#, c-format
+msgid "Invoke with query terms to search for!\n"
+msgstr "Geef termen op waarnaar gezocht moet worden.\n"
+
+#: src/doodle/doodled.c:63
+msgid "run in debug mode, do not daemonize"
+msgstr "in debugmodus draaien, niet als achtergrondservice"
+
+#: src/doodle/doodled.c:65
+msgid "add the filename to the list of keywords"
+msgstr "de bestandsnaam toevoegen aan de lijst van sleutelwoorden"
+
+#: src/doodle/doodled.c:71
+msgid "log activity to a file named FILENAME"
+msgstr "een logboek bijhouden en opslaan in dit bestand"
+
+#: src/doodle/doodled.c:84
+msgid "doodled [OPTIONS] [FILENAMES]"
+msgstr "doodled [OPTIES] [BESTANDSNAMEN]"
+
+#: src/doodle/doodled.c:85
+msgid "Continuously index files in the background."
+msgstr "Op de achtergrond voortdurend bestanden indexeren."
+
+#: src/doodle/doodled.c:186
+msgid "Event processing thread created.\n"
+msgstr "Gebeurtenissenafhandelings-thread is aangemaakt.\n"
+
+#: src/doodle/doodled.c:201 src/doodle/doodled.c:220 src/doodle/index.c:176
+#: src/doodle/index.c:184 src/doodle/index.c:207 src/doodle/tree.c:181
+#: src/doodle/tree.c:189 src/doodle/tree.c:220 src/doodle/tree.c:241
+#, c-format
+msgid "Call to '%s' failed: %s\n"
+msgstr "Aanroep van '%s' is mislukt: %s\n"
+
+#: src/doodle/doodled.c:379
+#, c-format
+msgid "Will monitor directory '%s' for changes.\n"
+msgstr "Map '%s' wordt gemonitord op veranderingen.\n"
+
+#: src/doodle/doodled.c:426
+#, c-format
+msgid "Processing file '%s'.\n"
+msgstr "Verwerken van bestand '%s'.\n"
+
+#: src/doodle/doodled.c:454
+msgid "Main worker thread created.\n"
+msgstr "Hoofd-thread is aangemaakt.\n"
+
+#: src/doodle/doodled.c:465
+msgid "Failed to spawn event processing thread.\n"
+msgstr "Aanmaken van gebeurtenissenafhandelings-thread is mislukt.\n"
+
+#: src/doodle/doodled.c:472
+msgid "Registering with FAM for file system events.\n"
+msgstr "Registratie bij 'fam' voor bestandssysteemgebeurtenissen.\n"
+
+#: src/doodle/doodled.c:495
+msgid "doodled startup complete.  Now waiting for FAM events.\n"
+msgstr ""
+"Het opstarten van 'doodled' is voltooid.\n"
+"Nu is het wachten op 'fam'-gebeurtenissen.\n"
+
+#: src/doodle/doodled.c:545
+msgid "Error disconnecting from fam.\n"
+msgstr "Fout bij het verbreken van de verbinding met 'fam'.\n"
+
+#: src/doodle/doodled.c:633
+msgid "Failed to connect to fam.  Aborting.\n"
+msgstr "Verbinding maken met 'fam' is mislukt -- gestopt\n"
+
+#: src/doodle/doodled.c:658
+#, c-format
+msgid "Failed to create worker thread: %s"
+msgstr "Aanmaken van hoofd-thread is mislukt: %s"
+
+#: src/doodle/doodled.c:671
+msgid "doodled is shutting down.\n"
+msgstr "doodled sluit af.\n"
+
+#: src/doodle/doodled.c:675
+msgid "No files exist that doodled would monitor for changes.  Exiting.\n"
+msgstr ""
+"Er zijn geen bestanden die 'doodled' zou monitoren op veranderingen -- "
+"gestopt\n"
+
+#: src/doodle/doodled.c:683
+#, c-format
+msgid "Cancelling fam monitor '%s'.\n"
+msgstr "Annuleren van 'fam'-monitor '%s':\n"
+
+#: src/doodle/doodled.c:704
+msgid "Unloading libextractor plugins.\n"
+msgstr "Verwijderen van 'libextractor'-plugins.\n"
+
+#: src/doodle/doodled.c:886
+#, c-format
+msgid "Invoke with filenames or directories to monitor!\n"
+msgstr "Geef bestandsnamen of mappen op die gemonitord moeten worden!\n"
+
+#: src/doodle/files.c:71 src/doodle/tree.c:328 src/doodle/tree.c:710
+#: src/doodle/tree.c:1077 src/doodle/tree.c:1384 src/doodle/tree.c:1400
+#: src/doodle/tree.c:1436 src/doodle/tree.c:1451 src/doodle/tree.c:1471
+#: src/doodle/tree.c:2356 src/doodle/tree.c:2385
+#, c-format
+msgid "Assertion failed at %s:%d.\n"
+msgstr "Controletest is mislukt bij %s:%d.\n"
+
+#: src/doodle/files.c:107
+#, c-format
+msgid "Scanning '%s'\n"
+msgstr "Doorzoeken van '%s'\n"
+
+#: src/doodle/files.c:115
+#, c-format
+msgid "Access to directory '%s' was denied.\n"
+msgstr "Toegang tot map '%s' werd geweigerd.\n"
+
+#: src/doodle/getopt.c:674
+#, c-format
+msgid "%s: option `%s' is ambiguous\n"
+msgstr "%s: optie '%s' is niet eenduidig\n"
+
+#: src/doodle/getopt.c:699
+#, c-format
+msgid "%s: option `--%s' doesn't allow an argument\n"
+msgstr "%s: optie '--%s' staat geen argument toe\n"
+
+#: src/doodle/getopt.c:705
+#, c-format
+msgid "%s: option `%c%s' doesn't allow an argument\n"
+msgstr "%s: optie '%c%s' staat geen argument toe\n"
+
+#: src/doodle/getopt.c:722 src/doodle/getopt.c:893
+#, c-format
+msgid "%s: option `%s' requires an argument\n"
+msgstr "%s: optie '%s' vereist een argument\n"
+
+#: src/doodle/getopt.c:751
+#, c-format
+msgid "%s: unrecognized option `--%s'\n"
+msgstr "%s: onbekende optie '--%s'\n"
+
+#: src/doodle/getopt.c:755
+#, c-format
+msgid "%s: unrecognized option `%c%s'\n"
+msgstr "%s: onbekende optie '%c%s'\n"
+
+#: src/doodle/getopt.c:781
+#, c-format
+msgid "%s: illegal option -- %c\n"
+msgstr "%s: ongeldige optie -- %c\n"
+
+#: src/doodle/getopt.c:783
+#, c-format
+msgid "%s: invalid option -- %c\n"
+msgstr "%s: ongeldige optie -- %c\n"
+
+#: src/doodle/getopt.c:812 src/doodle/getopt.c:942
+#, c-format
+msgid "%s: option requires an argument -- %c\n"
+msgstr "%s: optie vereist een argument -- %c\n"
+
+#: src/doodle/getopt.c:860
+#, c-format
+msgid "%s: option `-W %s' is ambiguous\n"
+msgstr "%s: optie '-W %s' is niet eenduidig\n"
+
+#: src/doodle/getopt.c:878
+#, c-format
+msgid "%s: option `-W %s' doesn't allow an argument\n"
+msgstr "%s: optie '-W %s' staat geen argument toe\n"
+
+#: src/doodle/grow.c:41
+#, c-format
+msgid "FATAL: MALLOC called with size 0!\n"
+msgstr "**interne fout**: malloc() aangeroepen met grootte nul!\n"
+
+#: src/doodle/grow.c:46
+#, c-format
+msgid "FATAL: MALLOC called with size < 0!\n"
+msgstr ""
+"**interne fout**: malloc() aangeroepen met een grootte kleiner dan nul!\n"
+
+#: src/doodle/grow.c:52 src/doodle/grow.c:70
+#, c-format
+msgid "FATAL: %s\n"
+msgstr "**interne fout**: %s\n"
+
+#: src/doodle/grow.c:64
+#, c-format
+msgid "FATAL: STRDUP called with str NULL!\n"
+msgstr "**interne fout**: strdup() aangeroepen met een NULL string\n"
+
+#: src/doodle/grow.c:100
+#, c-format
+msgid "FATAL: can not allocate %u * %d elements (number too large) at %s:%d.\n"
+msgstr ""
+"**fatale fout**: kan geen %u * %d elementen reserveren (aantal is te groot) "
+"op %s:%d.\n"
+
+#: src/doodle/help.c:51
+#, c-format
+msgid ""
+"Usage: %s\n"
+"%s\n"
+"\n"
+msgstr ""
+"Gebruik:  %s\n"
+"%s\n"
+"\n"
+
+#: src/doodle/help.c:54
+#, c-format
+msgid ""
+"Arguments mandatory for long options are also mandatory for short options.\n"
+msgstr ""
+"Argumenten die verplicht zijn voor lange opties zijn dat ook voor korte "
+"opties.\n"
+
+#: src/doodle/index.c:196
+msgid "Loading default set of libextractor plugins.\n"
+msgstr "Laden van standaard 'libextractor'-plugins.\n"
+
+#: src/doodle/index.c:200
+#, c-format
+msgid "Loading libextractor plugins: '%s'\n"
+msgstr "Laden van 'libextractor'-plugins: '%s'\n"
+
+#: src/doodle/tree.c:194
+#, c-format
+msgid "Short read at offset %llu (attempted to read %llu bytes).\n"
+msgstr "Te weinig gelezen op positie %llu (wilde %llu bytes lezen).\n"
+
+#: src/doodle/tree.c:212
+#, c-format
+msgid "'%s' failed: %s\n"
+msgstr "'%s' is mislukt: %s\n"
+
+#: src/doodle/tree.c:226
+#, c-format
+msgid "Short write at offset %llu (wanted to write %llu bytes).\n"
+msgstr "Te weinig geschreven op positie %llu (wilde %llu bytes schrijven).\n"
+
+#: src/doodle/tree.c:415 src/doodle/tree.c:437 src/doodle/tree.c:473
+#: src/doodle/tree.c:502 src/doodle/tree.c:664 src/doodle/tree.c:1119
+#: src/doodle/tree.c:1160 src/doodle/tree.c:1181 src/doodle/tree.c:1200
+#: src/doodle/tree.c:1213 src/doodle/tree.c:1235 src/doodle/tree.c:1242
+#: src/doodle/tree.c:1256
+#, c-format
+msgid ""
+"Assertion failed at %s:%d.\n"
+"Database format error!\n"
+msgstr ""
+"Controletest is mislukt bij %s:%d.\n"
+"Fout in gegevensbankindeling!\n"
+
+#: src/doodle/tree.c:1046
+#, c-format
+msgid "Memory limit (%u bytes) hit, serializing some data.\n"
+msgstr ""
+"Geheugenlimiet is bereikt (%u bytes); sommige gegevens worden "
+"geserialiseerd.\n"
+
+#: src/doodle/tree.c:1084
+#, c-format
+msgid "Reduced memory consumption for suffix tree to %u bytes.\n"
+msgstr "Geheugengebruik van achtervoegselsboom is beperkt tot %u bytes.\n"
+
+#: src/doodle/tree.c:1394
+#, c-format
+msgid "Assertion failed at %s:%d: %llu > %llu or %llu > %llu.\n"
+msgstr "Controletest is mislukt bij %s:%d: %llu > %llu or %llu > %llu.\n"
+
+#: src/doodle/tree.c:1514
+#, c-format
+msgid "Assertion failed at %s:%d: %llu > %llu.\n"
+msgstr "Controletest is mislukt bij %s:%d: %llu > %llu.\n"
+
+#: src/doodle/tree.c:1592
+#, c-format
+msgid "Could not open '%s': %s\n"
+msgstr "Kan '%s' niet openen: %s\n"
+
+#: src/doodle/tree.c:1602 src/doodle/tree.c:1811
+#, c-format
+msgid "Could not lock database '%s': %s\n"
+msgstr "Kan gegevensbank '%s' niet vergrendelen: %s\n"
+
+#: src/doodle/tree.c:1627
+#, c-format
+msgid ""
+"Database file '%s' is from incomplete database build.  I will remove it and "
+"rebuild the database.\n"
+msgstr ""
+"Gegevensbank-bestand '%s' is onvolledig aangemaakt.  Deze wordt verwijderd "
+"en opnieuw aangemaakt.\n"
+
+#: src/doodle/tree.c:1633
+#, c-format
+msgid "Could not unlink '%s': %s\n"
+msgstr "Kan '%s' niet verwijderen: %s\n"
+
+#: src/doodle/tree.c:1641
+#, c-format
+msgid "Database file '%s' has wrong magic code.\n"
+msgstr "Gegevensbank-bestand '%s' heeft een onjuist magisch nummer.\n"
+
+#: src/doodle/tree.c:1708
+#, c-format
+msgid "Error reading database '%s' at %s.%d.\n"
+msgstr "Fout bij lezen van gegevensbank '%s' bij %s:%d.\n"
+
+#: src/doodle/tree.c:1784
+#, c-format
+msgid "Database '%s' does not exist.\n"
+msgstr "Gegevensbank '%s' bestaat niet.\n"
+
+#: src/doodle/tree.c:1802
+#, c-format
+msgid "Error creating database '%s' at %s:%d: %s\n"
+msgstr "Fout bij aanmaken van gegevensbank '%s' bij %s:%d: %s\n"
+
+#: src/doodle/tree.c:1928
+#, c-format
+msgid "Could not open temporary file '%s': %s\n"
+msgstr "Kan tijdelijk bestand '%s' niet openen: %s\n"
+
+#: src/doodle/tree.c:1942
+#, c-format
+msgid "Writing doodle database to temporary file '%s'.\n"
+msgstr "Schrijven van doodle-gegevensbank naar tijdelijk bestand '%s'.\n"
+
+#: src/doodle/tree.c:2018
+#, c-format
+msgid "Could not remove old database '%s': %s\n"
+msgstr "Kan oude gegevensbank '%s' niet verwijderen: %s\n"
+
+#: src/doodle/tree.c:2025
+#, c-format
+msgid "Could not rename temporary file '%s' to '%s: %s\n"
+msgstr "Kan tijdelijk bestand '%s' niet hernoemen naar '%s': %s\n"
+
+#: src/doodle/tree.c:2080 src/doodle/tree.c:2138 src/doodle/tree.c:2220
+#: src/doodle/tree.c:2234 src/doodle/tree.c:2519 src/doodle/tree.c:2533
+#: src/doodle/tree.c:2545 src/doodle/tree.c:2583 src/doodle/tree.c:2628
+#: src/doodle/tree.c:2641 src/doodle/tree.c:2686 src/doodle/tree.c:2701
+#: src/doodle/tree.c:2714 src/doodle/tree.c:2736 src/doodle/tree.c:3191
+#, c-format
+msgid "Assertion failed at %s:%d!\n"
+msgstr "Controletest is mislukt bij %s:%d!\n"
+
+#: src/doodle/tree.c:2292
+#, c-format
+msgid "Adding keyword '%s' for file '%s'.\n"
+msgstr "Toevoegen van sleutelwoord '%s' voor bestand '%s'.\n"
+
+#: src/doodle/tree.c:2916
+#, c-format
+msgid "Removing the keywords for file '%s'.\n"
+msgstr "Verwijderen van sleutelwoorden voor bestand '%s'.\n"
+
+#: src/doodle/tree.c:2984 src/doodle/tree.c:3045
+msgid ""
+"Scanning filesystem in order to remove obsolete entries from existing "
+"database.\n"
+msgstr ""
+"Doorzoeken van het bestandssysteem om verouderde items uit de gegevensbank "
+"te verwijderen.\n"
+
+#: src/doodle/tree.c:3003 src/doodle/tree.c:3064
+#, c-format
+msgid "File '%s' could not be accessed: %s. Removing file from index.\n"
+msgstr ""
+"Kan geen toegang krijgen tot bestand '%s': %s.  Het wordt verwijderd uit de "
+"index.\n"
+
+#: src/doodle/tree.c:3010 src/doodle/tree.c:3071
+#, c-format
+msgid "File '%s' is not a regular file. Removing file from index.\n"
+msgstr ""
+"Bestand '%s' is geen gewoon bestand.  Het wordt verwijderd uit de index.\n"
+
+#~ msgid ""
+#~ "use the generic plaintext extractor for the language with the 2-letter "
+#~ "language code LANG (use when building database)"
+#~ msgstr ""
+#~ "de gewone-tekst-extractor voor deze (tweelettercode) taal gebruiken -- "
+#~ "bij aanmaken van gegevensbank"
+
+#~ msgid "compute hash using the given ALGORITHM (currently sha1 or md5)"
+#~ msgstr "met dit algoritme ('sha1' of 'md5') de hashwaarde berekenen"
+
+#~ msgid ""
+#~ "use the generic plaintext extractor for the language with the 2-letter "
+#~ "language code LANG"
+#~ msgstr "de gewone-tekst-extractor voor deze (tweelettercode) taal gebruiken"
+
+#~ msgid "compute hash using the given ALGORITHM"
+#~ msgstr "met dit algoritme de hashwaarde berekenen"

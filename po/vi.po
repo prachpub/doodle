@@ -1,0 +1,599 @@
+# Vietnamese translation for Doodle.
+# Copyright © 2007 Christian Grothoff
+# This file is distributed under the same license as the doodle-0.6.4 package.
+# Clytie Siddall <clytie@riverland.net.au>, 2005-2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: doodle 0.6.7\n"
+"Report-Msgid-Bugs-To: https://gnunet.org/mantis/ or christian@grothoff.org\n"
+"POT-Creation-Date: 2010-01-14 11:52+0100\n"
+"PO-Revision-Date: 2007-12-19 18:40+1030\n"
+"Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
+"Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"X-Generator: LocFactoryEditor 1.6.3b1\n"
+
+#: src/doodle/doodle.c:67
+msgid "consider strings to match if DISTANCE letters are different"
+msgstr "cnhững chuỗi vẫn còn khớp nếu chữ TẦM là khác nhau"
+
+#: src/doodle/doodle.c:69
+msgid "build database (default is to search)"
+msgstr "xây dựng cơ sở dữ liệu (mặc định là tìm kiếm)"
+
+#: src/doodle/doodle.c:71 src/doodle/doodled.c:61
+msgid "use location FILENAME to store doodle database"
+msgstr "dùng vị trí TÊN TẬP TIN để cất giữ co sở dữ liệu của doodle"
+
+#: src/doodle/doodle.c:73
+msgid "for each matching file, print the extracted keywords"
+msgstr "cho mỗi tập tin khớp được, in ra những từ khóa đã trích"
+
+#: src/doodle/doodle.c:75
+msgid "add the filename to the list of keywords (use when building database)"
+msgstr ""
+"thêm tên tập tin vào danh sách từ khóa (dùng khi xây dựng cơ sở dữ liệu)"
+
+#: src/doodle/doodle.c:77 src/doodle/doodled.c:67
+msgid "print this help page"
+msgstr "in ra trang trợ giúp này"
+
+#: src/doodle/doodle.c:79
+msgid "be case-insensitive (use when searching)"
+msgstr "bỏ qua chữ hoa/thường (dùng khi tìm kiếm)"
+
+#: src/doodle/doodle.c:81 src/doodle/doodled.c:69
+msgid "load an extractor plugin named LIBRARY"
+msgstr "tải bổ sung trích có tên THƯ VIỆN"
+
+#: src/doodle/doodle.c:83
+msgid "log keywords to a file named FILENAME"
+msgstr "ghi lưu các từ khóa vào tập tin có tên TÊN TẬP TIN"
+
+#: src/doodle/doodle.c:85 src/doodle/doodled.c:73
+msgid "do not load default set of extractor plugins"
+msgstr "không tải tập bổ sung trích mặc định"
+
+#: src/doodle/doodle.c:87 src/doodle/doodled.c:75
+msgid "set the memory limit to SIZE MB (for the tree)."
+msgstr "đặt giới hạn bộ nhớ thành CỠ MB (cho cây)."
+
+#: src/doodle/doodle.c:89
+msgid "print suffix tree (for debugging)"
+msgstr "in ra cây hậu tố (để gỡ lỗi)"
+
+#: src/doodle/doodle.c:91 src/doodle/doodled.c:77
+msgid "exclude given paths from building or searching"
+msgstr "loại trừ những đường dẫn đã cho ra việc xây dựng hay tìm kiếm"
+
+#: src/doodle/doodle.c:93 src/doodle/doodled.c:79
+msgid "print the version number"
+msgstr "in ra số hiệu phiên bản"
+
+#: src/doodle/doodle.c:95 src/doodle/doodled.c:81
+msgid "be verbose"
+msgstr "xuất chi tiết"
+
+#: src/doodle/doodle.c:98
+msgid "doodle [OPTIONS] ([FILENAMES]*|[KEYWORDS]*)"
+msgstr "doodle [TÙY_CHỌN] ([TÊN_TẬP_TIN]*|[TỪ_KHÓA]*)"
+
+#: src/doodle/doodle.c:99
+msgid "Index and search meta-data of files."
+msgstr "Phụ lục và tìm kiếm siêu dữ liệu của tập tin."
+
+#: src/doodle/doodle.c:144
+#, c-format
+msgid "Pruned: %s\n"
+msgstr "Đã xén bớt: %s\n"
+
+#: src/doodle/doodle.c:187 src/doodle/doodled.c:328 src/doodle/doodled.c:345
+#: src/doodle/doodled.c:391 src/doodle/files.c:79 src/doodle/tree.c:2283
+#, c-format
+msgid "Call to '%s' for file '%s' failed: %s\n"
+msgstr "Cuộc gọi « %s » cho tập tin « %s » bị lỗi: %s\n"
+
+#: src/doodle/doodle.c:195
+#, c-format
+msgid "Processing '%s'\n"
+msgstr "Đang xử lý « %s »\n"
+
+#: src/doodle/doodle.c:218 src/doodle/doodled.c:596
+#, c-format
+msgid "No database specified.  Aborting.\n"
+msgstr "Chưa ghi rõ cơ sở dữ liệu nên hủy bỏ.\n"
+
+#: src/doodle/doodle.c:223 src/doodle/doodled.c:603
+#, c-format
+msgid ""
+"'%s' is an invalid database filename (has a colon) for building database "
+"(option '%s').\n"
+msgstr ""
+"« %s » là một tên tập tin cơ sở dữ liệu không hợp lệ (có dấu hai chấm) để xây "
+"dựng cơ sở dữ liệu (tùy chọn « %s »).\n"
+
+#: src/doodle/doodle.c:255 src/doodle/doodled.c:585
+#, c-format
+msgid "Could not open '%s' for logging: %s.\n"
+msgstr "Không thể mở « %s » để ghi lưu : %s.\n"
+
+#: src/doodle/doodle.c:265 src/doodle/doodled.c:478
+#, c-format
+msgid "Indexing '%s'\n"
+msgstr "Đang phụ lục « %s »\n"
+
+#: src/doodle/doodle.c:322
+#, c-format
+msgid "Keywords for matching file '%s':\n"
+msgstr "Từ khóa cần khớp với tập tin « %s »:\n"
+
+#: src/doodle/doodle.c:343 src/doodle/doodle.c:382
+#, c-format
+msgid "No database specified. Aborting.\n"
+msgstr "Chưa ghi rõ cơ sở dữ liệu nên hủy bỏ.\n"
+
+#: src/doodle/doodle.c:348 src/doodle/doodle.c:387
+#, c-format
+msgid "Call to '%s' for file '%s' failed: %s.\n"
+msgstr "Cuộc gọi « %s » cho tập tin « %s » bị lỗi: %s.\n"
+
+#: src/doodle/doodle.c:423
+#, c-format
+msgid "Searching for '%s':\n"
+msgstr "Đang tìm kiếm « %s »:\n"
+
+#: src/doodle/doodle.c:426
+#, c-format
+msgid ""
+"Warning: search string is longer than %d characters, search will not work.\n"
+msgstr ""
+"Cảnh báo : chuỗi tìm kiếm có độ dài hơn %d ký tự nên việc tìm kiệm sẽ không "
+"hoạt động được.\n"
+
+#: src/doodle/doodle.c:431
+#, c-format
+msgid ""
+"Warning: search string is longer than %d characters, search may not work "
+"properly.\n"
+msgstr ""
+"Cảnh báo : chuỗi tìm kiếm có độ dài hơn %d ký tự nên việc tìm kiếm có lẽ sẽ "
+"không hoạt động được.\n"
+
+#: src/doodle/doodle.c:443 src/doodle/doodle.c:453
+#, c-format
+msgid "\tNot found!\n"
+msgstr "\tKhông tìm thấy.\n"
+
+#: src/doodle/doodle.c:523 src/doodle/doodle.c:579 src/doodle/doodled.c:852
+#, c-format
+msgid "You must pass a number to the '%s' option.\n"
+msgstr "Phải gởi một con số vào tùy chọn « %s ».\n"
+
+#: src/doodle/doodle.c:528 src/doodle/doodle.c:536 src/doodle/doodle.c:541
+#: src/doodle/doodle.c:546 src/doodle/doodle.c:566 src/doodle/doodle.c:595
+#, c-format
+msgid "The options '%s' and '%s' cannot be used together!\n"
+msgstr "Không thể dùng cả hai tùy chọn « %s » và « %s » với nhau.\n"
+
+#: src/doodle/doodle.c:584 src/doodle/doodled.c:857
+#, c-format
+msgid "Specified memory limit is too high.\n"
+msgstr "Giới hạn bộ nhớ đã ghi rõ là quá cao.\n"
+
+#: src/doodle/doodle.c:609 src/doodle/doodled.c:874
+#, c-format
+msgid "Version %s\n"
+msgstr "Phiên bản %s\n"
+
+#: src/doodle/doodle.c:614 src/doodle/doodled.c:879
+#, c-format
+msgid "Use '--help' to get a list of options.\n"
+msgstr "Hãy dùng lệnh « --help » (trợ giúp) để xem danh sách các tùy chọn.\n"
+
+#: src/doodle/doodle.c:623
+#, c-format
+msgid "Invoke with filenames or directories to index!\n"
+msgstr "Hãy chạy với những tên tập tin hay thư mục cần phụ lục !\n"
+
+#: src/doodle/doodle.c:624
+#, c-format
+msgid "Invoke with query terms to search for!\n"
+msgstr "Hãy chạy với chuỗi truy vấn cần tìm kiếm !\n"
+
+#: src/doodle/doodled.c:63
+msgid "run in debug mode, do not daemonize"
+msgstr "chạy bằng chế độ gỡ lỗi nên không chạy trong nền"
+
+#: src/doodle/doodled.c:65
+msgid "add the filename to the list of keywords"
+msgstr "thêm tên tập tin vào danh sách từ khóa"
+
+#: src/doodle/doodled.c:71
+msgid "log activity to a file named FILENAME"
+msgstr "ghi lưu các hoạt động vào tập tin có tên TÊN TẬP TIN"
+
+#: src/doodle/doodled.c:84
+msgid "doodled [OPTIONS] [FILENAMES]"
+msgstr "doodled [TÙY_CHỌN] [TÊN_TẬP_TIN]"
+
+#: src/doodle/doodled.c:85
+msgid "Continuously index files in the background."
+msgstr "Phụ lục liên tục tập tin trong nền."
+
+#: src/doodle/doodled.c:186
+msgid "Event processing thread created.\n"
+msgstr "Mạch xử lý sự kiện đã được tạo.\n"
+
+#: src/doodle/doodled.c:201 src/doodle/doodled.c:220 src/doodle/index.c:176
+#: src/doodle/index.c:184 src/doodle/index.c:207 src/doodle/tree.c:181
+#: src/doodle/tree.c:189 src/doodle/tree.c:220 src/doodle/tree.c:241
+#, c-format
+msgid "Call to '%s' failed: %s\n"
+msgstr "Cuộc gọi « %s » bị lỗi: %s\n"
+
+#: src/doodle/doodled.c:379
+#, c-format
+msgid "Will monitor directory '%s' for changes.\n"
+msgstr "Sẽ theo dõi thư mục « %s » có thay đổi nào.\n"
+
+#: src/doodle/doodled.c:426
+#, c-format
+msgid "Processing file '%s'.\n"
+msgstr "Đang xử lý tập tin « %s ».\n"
+
+#: src/doodle/doodled.c:454
+msgid "Main worker thread created.\n"
+msgstr "Mạch làm việc chính đã được tạo.\n"
+
+#: src/doodle/doodled.c:465
+msgid "Failed to spawn event processing thread.\n"
+msgstr "Việc tạo mạch xử lý dữ kiện bị lỗi.\n"
+
+#: src/doodle/doodled.c:472
+msgid "Registering with FAM for file system events.\n"
+msgstr "Đang đăng ký với FAM đốí với sự kiện hệ thống tập tin.\n"
+
+#: src/doodle/doodled.c:495
+msgid "doodled startup complete.  Now waiting for FAM events.\n"
+msgstr "Trình doodled đã khởi chạy; hiện thời đời sự kiện kiểu FAM.\n"
+
+#: src/doodle/doodled.c:545
+msgid "Error disconnecting from fam.\n"
+msgstr "Gặp lỗi khi ngắt kết nối ra FAM.\n"
+
+#: src/doodle/doodled.c:633
+msgid "Failed to connect to fam.  Aborting.\n"
+msgstr "Lỗi kết nối đến FAM nên hủy bỏ.\n"
+
+#: src/doodle/doodled.c:658
+#, c-format
+msgid "Failed to create worker thread: %s"
+msgstr "Lỗi tạo mạch làm việc: %s"
+
+#: src/doodle/doodled.c:671
+msgid "doodled is shutting down.\n"
+msgstr "Trình doodled đang thoát.\n"
+
+#: src/doodle/doodled.c:675
+msgid "No files exist that doodled would monitor for changes.  Exiting.\n"
+msgstr ""
+"Không có tập tin mà trình dooodled cần theo dõi có thay đổi nên thoát.\n"
+
+#: src/doodle/doodled.c:683
+#, c-format
+msgid "Cancelling fam monitor '%s'.\n"
+msgstr "Đang thôi bộ theo dõi FAM « %s ».\n"
+
+#: src/doodle/doodled.c:704
+msgid "Unloading libextractor plugins.\n"
+msgstr "Đang bỏ tải các bổ sung libextractor.\n"
+
+#: src/doodle/doodled.c:886
+#, c-format
+msgid "Invoke with filenames or directories to monitor!\n"
+msgstr "Hãy chạy với những tên tập tin hay thư mục cần theo dõi !\n"
+
+#: src/doodle/files.c:71 src/doodle/tree.c:328 src/doodle/tree.c:710
+#: src/doodle/tree.c:1077 src/doodle/tree.c:1384 src/doodle/tree.c:1400
+#: src/doodle/tree.c:1436 src/doodle/tree.c:1451 src/doodle/tree.c:1471
+#: src/doodle/tree.c:2356 src/doodle/tree.c:2385
+#, c-format
+msgid "Assertion failed at %s:%d.\n"
+msgstr "Việc khắng định bị lỗi tại %s:%d.\n"
+
+#: src/doodle/files.c:107
+#, c-format
+msgid "Scanning '%s'\n"
+msgstr "Đang quét « %s »\n"
+
+#: src/doodle/files.c:115
+#, c-format
+msgid "Access to directory '%s' was denied.\n"
+msgstr "Truy cập thư mục « %s » bị từ chối.\n"
+
+#: src/doodle/getopt.c:674
+#, c-format
+msgid "%s: option `%s' is ambiguous\n"
+msgstr "%s: tùy chọn « %s » là mơ hồ\n"
+
+#: src/doodle/getopt.c:699
+#, c-format
+msgid "%s: option `--%s' doesn't allow an argument\n"
+msgstr "%s: tùy chọn « --%s » không cho phép đối số\n"
+
+#: src/doodle/getopt.c:705
+#, c-format
+msgid "%s: option `%c%s' doesn't allow an argument\n"
+msgstr "%s: tùy chọn « %c%s » không cho phép đối số\n"
+
+#: src/doodle/getopt.c:722 src/doodle/getopt.c:893
+#, c-format
+msgid "%s: option `%s' requires an argument\n"
+msgstr "%s: tùy chọn « %s » cần đến đối số\n"
+
+#: src/doodle/getopt.c:751
+#, c-format
+msgid "%s: unrecognized option `--%s'\n"
+msgstr "%s: không nhận diện tùy chọn « --%s »\n"
+
+#: src/doodle/getopt.c:755
+#, c-format
+msgid "%s: unrecognized option `%c%s'\n"
+msgstr "%s: không nhận diện tùy chọn « %c%s »\n"
+
+#: src/doodle/getopt.c:781
+#, c-format
+msgid "%s: illegal option -- %c\n"
+msgstr "%s: không cho phép tùy chọn « -- %c »\n"
+
+#: src/doodle/getopt.c:783
+#, c-format
+msgid "%s: invalid option -- %c\n"
+msgstr "%s: tùy chọn không hợp lệ « -- %c »\n"
+
+#: src/doodle/getopt.c:812 src/doodle/getopt.c:942
+#, c-format
+msgid "%s: option requires an argument -- %c\n"
+msgstr "%s: tùy chọn cần đến đối số « -- %c »\n"
+
+#: src/doodle/getopt.c:860
+#, c-format
+msgid "%s: option `-W %s' is ambiguous\n"
+msgstr "%s: tùy chọn « -W %s » là mơ hồ\n"
+
+#: src/doodle/getopt.c:878
+#, c-format
+msgid "%s: option `-W %s' doesn't allow an argument\n"
+msgstr "%s: tùy chọn « -W %s » không cho phép đối số\n"
+
+#: src/doodle/grow.c:41
+#, c-format
+msgid "FATAL: MALLOC called with size 0!\n"
+msgstr "LỖI NGHIÊM TRỌNG: MALLOC (cấp chỗ) được gọi với kích cỡ 0 !\n"
+
+#: src/doodle/grow.c:46
+#, c-format
+msgid "FATAL: MALLOC called with size < 0!\n"
+msgstr "LỖI NGHIÊM TRỌNG: MALLOC (cấp chỗ) được gọi với kích cỡ < 0 !\n"
+
+#: src/doodle/grow.c:52 src/doodle/grow.c:70
+#, c-format
+msgid "FATAL: %s\n"
+msgstr "LỖI NGHIÊM TRỌNG: %s\n"
+
+#: src/doodle/grow.c:64
+#, c-format
+msgid "FATAL: STRDUP called with str NULL!\n"
+msgstr "LỖI NGHIÊM TRỌNG: STRDUP được gọi với str (chuỗi) vô giá trị !\n"
+
+#: src/doodle/grow.c:100
+#, c-format
+msgid "FATAL: can not allocate %u * %d elements (number too large) at %s:%d.\n"
+msgstr ""
+"LỖI NGHIÊM TRỌNG: không thể cấp « %u * %d » yếu tố (số quá lớn) tại %s:%d.\n"
+
+#: src/doodle/help.c:51
+#, c-format
+msgid ""
+"Usage: %s\n"
+"%s\n"
+"\n"
+msgstr ""
+"Cách sử dụng: %s\n"
+"%s\n"
+"\n"
+
+#: src/doodle/help.c:54
+#, c-format
+msgid ""
+"Arguments mandatory for long options are also mandatory for short options.\n"
+msgstr ""
+"Mọi đối số bắt buộc phải sử dụng với tùy chọn dài cũng bắt buộc với tùy chọn "
+"ngắn.\n"
+
+#: src/doodle/index.c:196
+msgid "Loading default set of libextractor plugins.\n"
+msgstr "Đang tải tập bổ sung libextractor mặc định.\n"
+
+#: src/doodle/index.c:200
+#, c-format
+msgid "Loading libextractor plugins: '%s'\n"
+msgstr "Đang tải các bổ sung libextractor: « %s »\n"
+
+#: src/doodle/tree.c:194
+#, c-format
+msgid "Short read at offset %llu (attempted to read %llu bytes).\n"
+msgstr "Đọc quá ngắn tại hiệu %llu (cố đọc %llu byte).\n"
+
+#: src/doodle/tree.c:212
+#, c-format
+msgid "'%s' failed: %s\n"
+msgstr "« %s » bị lỗi: %s\n"
+
+#: src/doodle/tree.c:226
+#, c-format
+msgid "Short write at offset %llu (wanted to write %llu bytes).\n"
+msgstr "Ghi quá ngắn tại hiệu %llu (đã muốn ghi %llu byte).\n"
+
+#: src/doodle/tree.c:415 src/doodle/tree.c:437 src/doodle/tree.c:473
+#: src/doodle/tree.c:502 src/doodle/tree.c:664 src/doodle/tree.c:1119
+#: src/doodle/tree.c:1160 src/doodle/tree.c:1181 src/doodle/tree.c:1200
+#: src/doodle/tree.c:1213 src/doodle/tree.c:1235 src/doodle/tree.c:1242
+#: src/doodle/tree.c:1256
+#, c-format
+msgid ""
+"Assertion failed at %s:%d.\n"
+"Database format error!\n"
+msgstr ""
+"Việc khắng định bị lỗi tại %s:%d.\n"
+"Lỗi định dạng cơ sở dữ liệu !\n"
+
+#: src/doodle/tree.c:1046
+#, c-format
+msgid "Memory limit (%u bytes) hit, serializing some data.\n"
+msgstr ""
+"Mới gặp giới hạn bộ nhớ (%u byte) nên xếp một phần dữ liệu theo thứ tự.\n"
+
+#: src/doodle/tree.c:1084
+#, c-format
+msgid "Reduced memory consumption for suffix tree to %u bytes.\n"
+msgstr "Mới giảm tiêu hao bộ nhớ cho cây hậu tố thành %u byte.\n"
+
+#: src/doodle/tree.c:1394
+#, c-format
+msgid "Assertion failed at %s:%d: %llu > %llu or %llu > %llu.\n"
+msgstr "Việc khắng định bị lỗi tại %s:%d: %llu > %llu hoặc %llu > %llu.\n"
+
+#: src/doodle/tree.c:1514
+#, c-format
+msgid "Assertion failed at %s:%d: %llu > %llu.\n"
+msgstr "Việc khắng định bị lỗi tại %s:%d: %llu > %llu.\n"
+
+#: src/doodle/tree.c:1592
+#, c-format
+msgid "Could not open '%s': %s\n"
+msgstr "Không thể mở « %s »: %s\n"
+
+#: src/doodle/tree.c:1602 src/doodle/tree.c:1811
+#, c-format
+msgid "Could not lock database '%s': %s\n"
+msgstr "Không thể khóa cơ sở dữ liệu « %s »: %s\n"
+
+#: src/doodle/tree.c:1627
+#, c-format
+msgid ""
+"Database file '%s' is from incomplete database build.  I will remove it and "
+"rebuild the database.\n"
+msgstr ""
+"Tập tin cơ sở dữ liệu « %s » được tạo do việc xây dựng cơ sở dữ liệu chưa "
+"hoàn thành nên sẽ gỡ bỏ nó rồi xây dựng lại cơ sở dữ liệu.\n"
+
+#: src/doodle/tree.c:1633
+#, c-format
+msgid "Could not unlink '%s': %s\n"
+msgstr "Không thể bỏ liên kết « %s »: %s\n"
+
+#: src/doodle/tree.c:1641
+#, c-format
+msgid "Database file '%s' has wrong magic code.\n"
+msgstr "Tập tin cơ sở dữ liệu « %s » có mã ma thuật không đúng.\n"
+
+#: src/doodle/tree.c:1708
+#, c-format
+msgid "Error reading database '%s' at %s.%d.\n"
+msgstr "Gặp lỗi khi đọc cơ sở dữ liệu « %s » tại %s.%d.\n"
+
+#: src/doodle/tree.c:1784
+#, c-format
+msgid "Database '%s' does not exist.\n"
+msgstr "Cơ sở dư liệu « %s » không tồn tại.\n"
+
+#: src/doodle/tree.c:1802
+#, c-format
+msgid "Error creating database '%s' at %s:%d: %s\n"
+msgstr "Gặp lỗi khi tạo cơ sở dữ liệu « %s » tại %s:%d: %s\n"
+
+#: src/doodle/tree.c:1928
+#, c-format
+msgid "Could not open temporary file '%s': %s\n"
+msgstr "Không thể mở tập tin tạm thời « %s »: %s\n"
+
+#: src/doodle/tree.c:1942
+#, c-format
+msgid "Writing doodle database to temporary file '%s'.\n"
+msgstr "Đang ghi cơ sở dữ liệu doodle vào tập tin tạm thời « %s ».\n"
+
+#: src/doodle/tree.c:2018
+#, c-format
+msgid "Could not remove old database '%s': %s\n"
+msgstr "Không thể gỡ bỏ cơ sở dữ liệu cũ « %s »: %s\n"
+
+#: src/doodle/tree.c:2025
+#, c-format
+msgid "Could not rename temporary file '%s' to '%s: %s\n"
+msgstr "Không thể thay đổi tên của tập tin tạm thời « %s » thành %s: %s\n"
+
+#: src/doodle/tree.c:2080 src/doodle/tree.c:2138 src/doodle/tree.c:2220
+#: src/doodle/tree.c:2234 src/doodle/tree.c:2519 src/doodle/tree.c:2533
+#: src/doodle/tree.c:2545 src/doodle/tree.c:2583 src/doodle/tree.c:2628
+#: src/doodle/tree.c:2641 src/doodle/tree.c:2686 src/doodle/tree.c:2701
+#: src/doodle/tree.c:2714 src/doodle/tree.c:2736 src/doodle/tree.c:3191
+#, c-format
+msgid "Assertion failed at %s:%d!\n"
+msgstr "Việc khắng định bị lỗi tại %s:%d!\n"
+
+#: src/doodle/tree.c:2292
+#, c-format
+msgid "Adding keyword '%s' for file '%s'.\n"
+msgstr "Đang thêm từ khóa « %s » cho tập tin « %s ».\n"
+
+#: src/doodle/tree.c:2916
+#, c-format
+msgid "Removing the keywords for file '%s'.\n"
+msgstr "Đang gỡ bỏ các từ khóa cho tập tin « %s ».\n"
+
+#: src/doodle/tree.c:2984 src/doodle/tree.c:3045
+msgid ""
+"Scanning filesystem in order to remove obsolete entries from existing "
+"database.\n"
+msgstr ""
+"Đang quét hệ thống tập tin để gỡ bỏ các mục nhập cũ ra cơ sở dữ liệu tồn "
+"tại.\n"
+
+#: src/doodle/tree.c:3003 src/doodle/tree.c:3064
+#, c-format
+msgid "File '%s' could not be accessed: %s. Removing file from index.\n"
+msgstr "Không thể truy cập tập tin « %s »: %s nên gỡ bỏ nó ra phụ lục.\n"
+
+#: src/doodle/tree.c:3010 src/doodle/tree.c:3071
+#, c-format
+msgid "File '%s' is not a regular file. Removing file from index.\n"
+msgstr ""
+"Tập tin « %s » không phải là một tập tin chuẩn nên gỡ bỏ nó ra phụ lục.\n"
+
+#~ msgid ""
+#~ "use the generic plaintext extractor for the language with the 2-letter "
+#~ "language code LANG (use when building database)"
+#~ msgstr ""
+#~ "dùng trình trích nhập thô giống loài cho ngôn ngữ có mã ngôn ngữ dạng hai "
+#~ "chữ là LANG (dùng khi xây dựng cơ sở dữ liệu)"
+
+#~ msgid "compute hash using the given ALGORITHM (currently sha1 or md5)"
+#~ msgstr "tính băm bằng THUẬT TOÁN đã đưa ra (hiện tại « sha1 » hay « md5 »)"
+
+#~ msgid ""
+#~ "use the generic plaintext extractor for the language with the 2-letter "
+#~ "language code LANG"
+#~ msgstr ""
+#~ "dùng trình trích nhập thô giống loài cho ngôn ngữ có mã ngôn ngữ hai chữ "
+#~ "là LANG"
+
+#~ msgid "compute hash using the given ALGORITHM"
+#~ msgstr "tính băm bằng THUẬT TOÁN đã cho"
+
+#~ msgid "Failed to load any libextractor plugins. Aborting.\n"
+#~ msgstr "Lỗi tải bổ sung libextractor nên hủy bỏ.\n"
