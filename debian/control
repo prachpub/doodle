@@ -8,6 +8,8 @@ Build-Depends: autotools-dev,
                libextractor-dev (>= 1:0.6.0),
                libgamin-dev
 Standards-Version: 3.9.4
+Vcs-Git: git://github.com/prachpub/doodle.git
+Vcs-Browser: https://github.com/prachpub/doodle
 Homepage: http://www.gnunet.org/doodle/
 
 Package: doodle
