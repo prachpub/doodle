@@ -1,3 +1,14 @@
+doodle (0.7.0-7) unstable; urgency=low
+
+  * Upload to unstable
+  * debian/doodled.init:
+    - Use LSB init-functions 
+    - Add --make-pidfile and --background (Closes: #650835)
+  * Add debian/gbp.conf
+  * Add Vcs-* fields
+
+ -- Prach Pongpanich <prachpub@gmail.com>  Sun, 26 May 2013 22:09:49 +0700
+
 doodle (0.7.0-6) experimental; urgency=low
 
   * New maintainer. (Closes: #660437)
