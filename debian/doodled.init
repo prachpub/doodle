@@ -34,13 +34,13 @@ fi
 
 case "${1}" in
 	start)
+		log_daemon_msg "Starting ${DESC}" "${NAME}"
 		if [ -e ${DOODLE_PATH} ]
 		then
-			log_daemon_msg "Starting ${DESC}" "${NAME}"
 			start-stop-daemon --start --quiet --pidfile ${PIDFILE} --make-pidfile --background --oknodo --exec ${DAEMON} -- ${DAEMON_OPTS}
 			log_end_msg $?
 		else
-			log_warning_msg "halted (you may want to run doodle first)"
+			log_failure_msg "halted (you may want to run doodle first)"
 		fi
 		;;
 
